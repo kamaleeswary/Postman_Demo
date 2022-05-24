@@ -1,0 +1,2286 @@
+{
+	"info": {
+		"_postman_id": "990bcac0-bc31-4143-9732-dd8bbe71bc22",
+		"name": "groupTest",
+		"description": "- The Group Management API resources are used to manage individual groups, their members and activities, these resources allow you to create new group, fetch/update group details, add/edit/remove memebers to a group, add/delete activities in a group and fetch all groups of a user. \n<b>Note:</b> These resources can be used as a part of scripts or programs to allow authorized administrators to manage the groups.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "group",
+			"item": [
+				{
+					"name": "v1",
+					"item": [
+						{
+							"name": "Create Group",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "4835cbc5-98bf-4477-af8f-d688a08a3dd3",
+										"exec": [
+											"",
+											"pm.test(\"Status code is 401\", function () {",
+											"    pm.response.to.have.status(401);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "899045ab-b4a5-486f-b039-61cbfc9120f7",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "key",
+											"value": "Authorization",
+											"type": "string"
+										},
+										{
+											"key": "value",
+											"value": "<API Key>",
+											"type": "string"
+										},
+										{
+											"key": "in",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"description": "Timestamp at which given API request is sent.",
+										"key": "ts",
+										"value": "cillum anim"
+									},
+									{
+										"description": "This ID uniquely identifies a request if the same API is executed multiple times.",
+										"key": "X-msgid",
+										"value": "cillum anim"
+									},
+									{
+										"description": "It is a unique token/key to authenticate the user each time an API is called. For corresponding sessions this token is used, not your actual username/password",
+										"key": "x-authenticated-user-token",
+										"value": "cillum anim"
+									},
+									{
+										"description": "Managed User token of registered MUA user performing given API request.",
+										"key": "x-authenticated-for",
+										"value": "cillum anim"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"request\": {\n    \"name\": \"Study Group\",\n    \"description\": \"This groups belongs to  group study\"\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/group/v1/create",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"group",
+										"v1",
+										"create"
+									]
+								},
+								"description": "This API is used to create a group\n   - The endpoint for **Create Group** is `/group/v1/create`  \n   - The fields marked with an asterisk (*) are mandatory. They cannot be null or empty."
+							},
+							"response": [
+								{
+									"id": "bbfa63da-156b-461f-80bc-399cc9929682",
+									"name": "OK ! Successful operation.\"Create Group\" operation was successfully executed.",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											},
+											{
+												"description": "Timestamp at which given API request is sent.",
+												"key": "ts",
+												"value": "cillum anim"
+											},
+											{
+												"description": "This ID uniquely identifies a request if the same API is executed multiple times.",
+												"key": "X-msgid",
+												"value": "cillum anim"
+											},
+											{
+												"description": "(Required) To make use of any Group API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.",
+												"key": "Authorization",
+												"value": "cillum anim"
+											},
+											{
+												"description": "It is a unique token/key to authenticate the user each time an API is called. For corresponding sessions this token is used, not your actual username/password",
+												"key": "x-authenticated-user-token",
+												"value": "cillum anim"
+											},
+											{
+												"description": "Managed User token of registered MUA user performing given API request.",
+												"key": "x-authenticated-for",
+												"value": "cillum anim"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"request\": {\n    \"name\": \"Study Group\",\n    \"description\": \"This groups belongs to  group study\"\n  }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/group/v1/create",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"group",
+												"v1",
+												"create"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n \"id\": \"api.group.create\",\n \"ver\": \"v1\",\n \"ts\": \"2020-12-01 20:52:25:226+0000\",\n \"params\": {\n  \"msgid\": \"cupidatat pariatur ut\",\n  \"resmsgid\": \"sit dolore officia\",\n  \"err\": \"enim ea veniam pariatur\",\n  \"errmsg\": \"dolore\",\n  \"errdetail\": \"Lorem\",\n  \"status\": \"nostrud ad consequat commodo\"\n },\n \"result\": {\n  \"groupId\": \"682473c2-12ba-4a89-b8db-67c2c65ca97a\"\n },\n \"responseCode\": 200\n}"
+								},
+								{
+									"id": "19a7b521-bdb9-4797-be85-495fbca3c017",
+									"name": "BAD REQUEST. The \"Create Group\" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											},
+											{
+												"description": "Timestamp at which given API request is sent.",
+												"key": "ts",
+												"value": "cillum anim"
+											},
+											{
+												"description": "This ID uniquely identifies a request if the same API is executed multiple times.",
+												"key": "X-msgid",
+												"value": "cillum anim"
+											},
+											{
+												"description": "(Required) To make use of any Group API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.",
+												"key": "Authorization",
+												"value": "cillum anim"
+											},
+											{
+												"description": "It is a unique token/key to authenticate the user each time an API is called. For corresponding sessions this token is used, not your actual username/password",
+												"key": "x-authenticated-user-token",
+												"value": "cillum anim"
+											},
+											{
+												"description": "Managed User token of registered MUA user performing given API request.",
+												"key": "x-authenticated-for",
+												"value": "cillum anim"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"request\": {\n    \"name\": \"Study Group\",\n    \"description\": \"This groups belongs to  group study\"\n  }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/group/v1/create",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"group",
+												"v1",
+												"create"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n \"id\": \"api.group.create\",\n \"ver\": \"mollit\",\n \"ts\": \"2020-12-02 11:09:52:748+0530\",\n \"params\": {\n  \"resmsgid\": null,\n  \"msgid\": \"6da747d8-c19f-40cb-9938-fcf0913e301f\",\n  \"err\": \"GS_CRT02\",\n  \"status\": \"failed\",\n  \"errmsg\": \"Failed to create group, fields are missing in the request. Enter the required values and resend the request.\"\n },\n \"result\": {},\n \"responseCode\": 400,\n \"paramsresmsgid\": null\n}"
+								},
+								{
+									"id": "97b96392-c338-4de1-8bf8-ca5316e83258",
+									"name": "Unauthorized User",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											},
+											{
+												"description": "Timestamp at which given API request is sent.",
+												"key": "ts",
+												"value": "cillum anim"
+											},
+											{
+												"description": "This ID uniquely identifies a request if the same API is executed multiple times.",
+												"key": "X-msgid",
+												"value": "cillum anim"
+											},
+											{
+												"description": "(Required) To make use of any Group API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.",
+												"key": "Authorization",
+												"value": "cillum anim"
+											},
+											{
+												"description": "It is a unique token/key to authenticate the user each time an API is called. For corresponding sessions this token is used, not your actual username/password",
+												"key": "x-authenticated-user-token",
+												"value": "cillum anim"
+											},
+											{
+												"description": "Managed User token of registered MUA user performing given API request.",
+												"key": "x-authenticated-for",
+												"value": "cillum anim"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"request\": {\n    \"name\": \"Study Group\",\n    \"description\": \"This groups belongs to  group study\"\n  }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/group/v1/create",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"group",
+												"v1",
+												"create"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n \"id\": \"api.group.create\",\n \"ver\": \"mollit\",\n \"ts\": \"2020-12-02 05:53:25:361+0000\",\n \"params\": {\n  \"resmsgid\": null,\n  \"msgid\": \"f5e58ea069e93de16e721d0312a195dc\",\n  \"err\": \"GS_UNAUTHORIZED\",\n  \"status\": \"failed\",\n  \"errmsg\": \"You are an unauthorized.Contact your system administrator\"\n },\n \"result\": {},\n \"responseCode\": 401,\n \"paramsresmsgid\": null\n}"
+								},
+								{
+									"id": "91604d21-7490-4fe5-8310-821e7c26b4f7",
+									"name": "'INTERNAL SERVER ERROR. We track these errors automatically and try to set it right at the earliest. Try refreshing the page. If the problem persists contact us at info@sunbird.org.'",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											},
+											{
+												"description": "Timestamp at which given API request is sent.",
+												"key": "ts",
+												"value": "cillum anim"
+											},
+											{
+												"description": "This ID uniquely identifies a request if the same API is executed multiple times.",
+												"key": "X-msgid",
+												"value": "cillum anim"
+											},
+											{
+												"description": "(Required) To make use of any Group API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.",
+												"key": "Authorization",
+												"value": "cillum anim"
+											},
+											{
+												"description": "It is a unique token/key to authenticate the user each time an API is called. For corresponding sessions this token is used, not your actual username/password",
+												"key": "x-authenticated-user-token",
+												"value": "cillum anim"
+											},
+											{
+												"description": "Managed User token of registered MUA user performing given API request.",
+												"key": "x-authenticated-for",
+												"value": "cillum anim"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"request\": {\n    \"name\": \"Study Group\",\n    \"description\": \"This groups belongs to  group study\"\n  }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/group/v1/create",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"group",
+												"v1",
+												"create"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n \"id\": \"api.group.create\",\n \"ver\": \"v1\",\n \"ts\": \"2020-12-01 10:49:01:948+0000\",\n \"params\": {\n  \"resmsgid\": null,\n  \"msgid\": \"12eb0ca45ce4c776fab994d120bedd41\",\n  \"err\": \"GS_CRT03\",\n  \"status\": \"failed\",\n  \"errmsg\": \"Failed to create group, due to database error or there are too many concurrent calls to the server. Try again later.\"\n },\n \"responseCode\": \"SERVER_ERROR\",\n \"result\": {},\n \"paramsresmsgid\": null\n}"
+								}
+							]
+						},
+						{
+							"name": "Update Group",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "c5dc0db7-b685-46c6-9a95-056bc7a6f2c2",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Status code is 401\", function () {",
+											"    pm.response.to.have.status(401);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "15bd36fc-a579-4f9b-b44b-7a975f15c506",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"description": "Timestamp at which given API request is sent.",
+										"key": "ts",
+										"value": "cillum anim"
+									},
+									{
+										"description": "This ID uniquely identifies a request if the same API is executed multiple times.",
+										"key": "X-msgid",
+										"value": "cillum anim"
+									},
+									{
+										"description": "(Required) Access token of registered user performing given API request.",
+										"key": "X-Authenticated-User-Token",
+										"value": "cillum anim"
+									},
+									{
+										"description": "Managed User token of registered MUA user performing given API request.",
+										"key": "x-authenticated-for",
+										"value": "cillum anim"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"request\": {\n    \"groupId\": \"groupid\",\n    \"name\": \"Demo Group\",\n    \"description\": \"Group name is changed for demo purpose\"\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/group/v1/update",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"group",
+										"v1",
+										"update"
+									]
+								},
+								"description": "This API is used for updating the group related details. This can also be used to add/edit/remove members of a group and also to add/remove activitties of a group. This API can add details partially as well, for example, one member in the request could not be added, because that member is inactive or id doesn't exist, still other properties in the request is updated. If a member is not added, only the status of that will be shown in the “errors” array in response.\n  - The endpoint for **Update Group** is `/group/v1/update`\n  - The fields marked with an asterisk (*) are mandatory. They cannot be null or empty.\n  - Once group suspended following operation can only be performed :-\n    1. All member are eligible to leave the group. \n    2. Creator will be able to delete the group.\n    3. Admin will be able to reactivate the group.\n    4. All other operations are not permitted once group is suspended."
+							},
+							"response": [
+								{
+									"id": "abbf9024-48df-4a74-a5ab-82db2ab86a8a",
+									"name": "OK ! Successful operation.\"Update Group\" operation was successfully executed.",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"description": "Timestamp at which given API request is sent.",
+												"key": "ts",
+												"value": "cillum anim"
+											},
+											{
+												"description": "This ID uniquely identifies a request if the same API is executed multiple times.",
+												"key": "X-msgid",
+												"value": "cillum anim"
+											},
+											{
+												"description": "(Required) Specify authorization key (format: Bearer api-key) received from administrator when performing given API request.",
+												"key": "Authorization",
+												"value": "cillum anim"
+											},
+											{
+												"description": "(Required) Access token of registered user performing given API request.",
+												"key": "X-Authenticated-User-Token",
+												"value": "cillum anim"
+											},
+											{
+												"description": "Managed User token of registered MUA user performing given API request.",
+												"key": "x-authenticated-for",
+												"value": "cillum anim"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"request\": {\n    \"groupId\": \"groupid\",\n    \"name\": \"Demo Group\",\n    \"description\": \"Group name is changed for demo purpose\"\n  }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/group/v1/update",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"group",
+												"v1",
+												"update"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"id\": \"d1232323\",\n  \"ver\": \"3.0\",\n  \"ets\": \"139832389023\",\n  \"responseCode\": \"200\",\n  \"result\": {\n    \"response\": \"success\"\n  }\n}"
+								},
+								{
+									"id": "509299c7-7c75-4964-90b7-4c54fd63036a",
+									"name": "BAD REQUEST. The \"Update Group\" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"description": "Timestamp at which given API request is sent.",
+												"key": "ts",
+												"value": "cillum anim"
+											},
+											{
+												"description": "This ID uniquely identifies a request if the same API is executed multiple times.",
+												"key": "X-msgid",
+												"value": "cillum anim"
+											},
+											{
+												"description": "(Required) Specify authorization key (format: Bearer api-key) received from administrator when performing given API request.",
+												"key": "Authorization",
+												"value": "cillum anim"
+											},
+											{
+												"description": "(Required) Access token of registered user performing given API request.",
+												"key": "X-Authenticated-User-Token",
+												"value": "cillum anim"
+											},
+											{
+												"description": "Managed User token of registered MUA user performing given API request.",
+												"key": "x-authenticated-for",
+												"value": "cillum anim"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"request\": {\n    \"groupId\": \"groupid\",\n    \"name\": \"Demo Group\",\n    \"description\": \"Group name is changed for demo purpose\"\n  }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/group/v1/update",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"group",
+												"v1",
+												"update"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"id\": \"api.group.update\",\n  \"ver\": null,\n  \"ts\": \"2020-12-02 11:09:52:748+0530\",\n  \"params\": {\n    \"resmsgid\": null,\n    \"msgid\": \"6da747d8-c19f-40cb-9938-fcf0913e301f\",\n    \"err\": \"GS_UDT02\",\n    \"status\": \"failed\",\n    \"errmsg\": \"Failed to update group, mandatory fields are missing in the request. Enter the required values and resend the request.\"\n  },\n  \"result\": {},\n  \"responseCode\": 400\n}"
+								},
+								{
+									"id": "5cba92f4-c312-4735-9c16-66a568f9189d",
+									"name": "Unauthorized User",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"description": "Timestamp at which given API request is sent.",
+												"key": "ts",
+												"value": "cillum anim"
+											},
+											{
+												"description": "This ID uniquely identifies a request if the same API is executed multiple times.",
+												"key": "X-msgid",
+												"value": "cillum anim"
+											},
+											{
+												"description": "(Required) Specify authorization key (format: Bearer api-key) received from administrator when performing given API request.",
+												"key": "Authorization",
+												"value": "cillum anim"
+											},
+											{
+												"description": "(Required) Access token of registered user performing given API request.",
+												"key": "X-Authenticated-User-Token",
+												"value": "cillum anim"
+											},
+											{
+												"description": "Managed User token of registered MUA user performing given API request.",
+												"key": "x-authenticated-for",
+												"value": "cillum anim"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"request\": {\n    \"groupId\": \"groupid\",\n    \"name\": \"Demo Group\",\n    \"description\": \"Group name is changed for demo purpose\"\n  }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/group/v1/update",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"group",
+												"v1",
+												"update"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"id\": \"api.group.update\",\n  \"ver\": null,\n  \"ts\": \"2020-12-02 05:53:25:361+0000\",\n  \"params\": {\n    \"resmsgid\": null,\n    \"msgid\": \"f5e58ea069e93de16e721d0312a195dc\",\n    \"err\": \"GS_UNAUTHORIZED\",\n    \"status\": \"failed\",\n    \"errmsg\": \"You are an unauthorized.Contact your system administrator\"\n  },\n  \"result\": {},\n  \"responseCode\": 401\n}"
+								},
+								{
+									"id": "44833f8c-4017-4a87-ab37-b4f641498416",
+									"name": "Resource not found. The \"Update Group\" operation failed ! The possible reason for failure is that requested resource not found. here resource is group.",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"description": "Timestamp at which given API request is sent.",
+												"key": "ts",
+												"value": "cillum anim"
+											},
+											{
+												"description": "This ID uniquely identifies a request if the same API is executed multiple times.",
+												"key": "X-msgid",
+												"value": "cillum anim"
+											},
+											{
+												"description": "(Required) Specify authorization key (format: Bearer api-key) received from administrator when performing given API request.",
+												"key": "Authorization",
+												"value": "cillum anim"
+											},
+											{
+												"description": "(Required) Access token of registered user performing given API request.",
+												"key": "X-Authenticated-User-Token",
+												"value": "cillum anim"
+											},
+											{
+												"description": "Managed User token of registered MUA user performing given API request.",
+												"key": "x-authenticated-for",
+												"value": "cillum anim"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"request\": {\n    \"groupId\": \"groupid\",\n    \"name\": \"Demo Group\",\n    \"description\": \"Group name is changed for demo purpose\"\n  }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/group/v1/update",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"group",
+												"v1",
+												"update"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"id\": \"api.group.update\",\n  \"ver\": null,\n  \"ts\": \"2020-12-02 11:40:57:348+0530\",\n  \"params\": {\n    \"resmsgid\": null,\n    \"msgid\": \"ed1c0b7c-8f10-4a35-9f42-93966d8d97f6\",\n    \"err\": \"GS_UDT07\",\n    \"status\": \"failed\",\n    \"errmsg\": \"Failed to update, group does not exist. Contact your system administrator.\"\n  },\n  \"result\": {},\n  \"responseCode\": 400\n}"
+								},
+								{
+									"id": "2a33887d-055a-4a69-b248-4c9b15b20a1e",
+									"name": "'INTERNAL SERVER ERROR. We track these errors automatically and try to set it right at the earliest. Try refreshing the page. If the problem persists contact us at info@sunbird.org.'",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"description": "Timestamp at which given API request is sent.",
+												"key": "ts",
+												"value": "cillum anim"
+											},
+											{
+												"description": "This ID uniquely identifies a request if the same API is executed multiple times.",
+												"key": "X-msgid",
+												"value": "cillum anim"
+											},
+											{
+												"description": "(Required) Specify authorization key (format: Bearer api-key) received from administrator when performing given API request.",
+												"key": "Authorization",
+												"value": "cillum anim"
+											},
+											{
+												"description": "(Required) Access token of registered user performing given API request.",
+												"key": "X-Authenticated-User-Token",
+												"value": "cillum anim"
+											},
+											{
+												"description": "Managed User token of registered MUA user performing given API request.",
+												"key": "x-authenticated-for",
+												"value": "cillum anim"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"request\": {\n    \"groupId\": \"groupid\",\n    \"name\": \"Demo Group\",\n    \"description\": \"Group name is changed for demo purpose\"\n  }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/group/v1/update",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"group",
+												"v1",
+												"update"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"id\": \"api.group.update\",\n  \"ver\": \"v1\",\n  \"ts\": \"2020-12-01 10:49:01:948+0000\",\n  \"params\": {\n    \"resmsgid\": null,\n    \"msgid\": \"12eb0ca45ce4c776fab994d120bedd41\",\n    \"err\": \"GS_UDT03\",\n    \"status\": \"failed\",\n    \"errmsg\": \"Failed to update group, due to database error or there are too many concurrent calls to the server. Try again later.\"\n  },\n  \"responseCode\": \"SERVER_ERROR\",\n  \"result\": {}\n}"
+								}
+							]
+						},
+						{
+							"name": "Get Group by Group ID",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "f5e3cb12-d1b1-4a8e-beca-1df1de75f5c7",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Status code is 401\", function () {",
+											"    pm.response.to.have.status(401);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "1a310a5c-97d6-41fa-be05-936525866740",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Timestamp at which given API request is sent.",
+										"key": "ts",
+										"value": "cillum anim"
+									},
+									{
+										"description": "This ID uniquely identifies a request if the same API is executed multiple times.",
+										"key": "X-msgid",
+										"value": "cillum anim"
+									},
+									{
+										"description": "(Required) Access token of registered user performing given API request.",
+										"key": "x-authenticated-user-token",
+										"value": "cillum anim"
+									},
+									{
+										"description": "Managed User token of registered MUA user performing given API request.",
+										"key": "x-authenticated-for",
+										"value": "cillum anim"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/group/v1/read/:groupId?fields=cillum anim",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"group",
+										"v1",
+										"read",
+										":groupId"
+									],
+									"query": [
+										{
+											"key": "fields",
+											"value": "cillum anim",
+											"description": "If user need any specific values like, members and activities of the group append 'fields' as QueryParam. Ex: fields=members,activities"
+										}
+									],
+									"variable": [
+										{
+											"key": "groupId",
+											"value": "cillum anim",
+											"description": "(Required) Please append a valid Group Id To the Request URL"
+										}
+									]
+								},
+								"description": "This API is used for getting a specific group, it is based on the unique ID of the group\n  - The endpoint for **Get Group by Group ID** is `/group/v1/read/{groupId}`\n  - The fields marked with an asterisk (*) are mandatory. They cannot be null or empty.\n  - User can pass an optional query parameter 'fields'. The value is a comma separated list of fields whose information is required in response. e.g. fields=members,activities\n  - 'members' is to return all the members of the group.\n  - 'activities' is to return all the activities of the group along with activity information from search service."
+							},
+							"response": [
+								{
+									"id": "4ed684da-6d4b-4f66-b4b8-49bac75aa87a",
+									"name": "OK ! Successful operation.\"Get Group by Group ID\" operation was successfully executed.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Timestamp at which given API request is sent.",
+												"key": "ts",
+												"value": "cillum anim"
+											},
+											{
+												"description": "This ID uniquely identifies a request if the same API is executed multiple times.",
+												"key": "X-msgid",
+												"value": "cillum anim"
+											},
+											{
+												"description": "(Required) Specify authorization key (format: Bearer api-key) received from administrator when performing given API request.",
+												"key": "Authorization",
+												"value": "cillum anim"
+											},
+											{
+												"description": "(Required) Access token of registered user performing given API request.",
+												"key": "x-authenticated-user-token",
+												"value": "cillum anim"
+											},
+											{
+												"description": "Managed User token of registered MUA user performing given API request.",
+												"key": "x-authenticated-for",
+												"value": "cillum anim"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/group/v1/read/:groupId?fields=cillum anim",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"group",
+												"v1",
+												"read",
+												":groupId"
+											],
+											"query": [
+												{
+													"key": "fields",
+													"value": "cillum anim"
+												}
+											],
+											"variable": [
+												{
+													"key": "groupId",
+													"value": "cillum anim",
+													"description": "(Required) Please append a valid Group Id To the Request URL"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"id\": \"api.group.read\",\n  \"ver\": \"v1\",\n  \"ts\": \"2020-12-02 12:15:30:633+0530\",\n  \"params\": null,\n  \"result\": {\n    \"membershipType\": \"moderated\",\n    \"updatedBy\": \"27b9d2ae-3e07-4ebf-909c-985e217417a2\",\n    \"createdBy\": \"27b9d2ae-3e07-4ebf-909c-985e217417a2\",\n    \"activities\": [\n      {\n        \"id\": \"do_212691674291134464114382\",\n        \"type\": \"Course\"\n      }\n    ],\n    \"members\": [\n      {\n        \"userId\": \"39c1cdf3-57c6-4614-b96d-27e29d757085\",\n        \"groupId\": \"298eb021-fe35-4448-a97e-ca1987ea0768\",\n        \"role\": \"admin\",\n        \"status\": \"active\",\n        \"createdOn\": \"2020-10-16 05:29:26:371+0000\",\n        \"createdBy\": \"39c1cdf3-57c6-4614-b96d-27e29d757085\",\n        \"updatedOn\": null,\n        \"updatedBy\": null,\n        \"removedOn\": null,\n        \"removedBy\": null,\n        \"visited\": null,\n        \"name\": \"satish Nirmalkar\"\n      }\n    ],\n    \"name\": \"17july\",\n    \"id\": \"90e70ade-260d-48d6-a8b0-fd5f3e45b4f6\",\n    \"updatedOn\": \"2020-07-22 10:24:42:316+0530\",\n    \"createdOn\": \"2020-07-17 13:43:55:561+0530\",\n    \"status\": \"active\",\n    \"responseCode\": 200\n  }\n}"
+								},
+								{
+									"id": "e8f7bc45-3671-40ad-a278-4ce618e1ffef",
+									"name": "BAD REQUEST,\"Get Group by Group ID\" operation failed ! The possible reason for failure is that you may have given the wrong id.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Timestamp at which given API request is sent.",
+												"key": "ts",
+												"value": "cillum anim"
+											},
+											{
+												"description": "This ID uniquely identifies a request if the same API is executed multiple times.",
+												"key": "X-msgid",
+												"value": "cillum anim"
+											},
+											{
+												"description": "(Required) Specify authorization key (format: Bearer api-key) received from administrator when performing given API request.",
+												"key": "Authorization",
+												"value": "cillum anim"
+											},
+											{
+												"description": "(Required) Access token of registered user performing given API request.",
+												"key": "x-authenticated-user-token",
+												"value": "cillum anim"
+											},
+											{
+												"description": "Managed User token of registered MUA user performing given API request.",
+												"key": "x-authenticated-for",
+												"value": "cillum anim"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/group/v1/read/:groupId?fields=cillum anim",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"group",
+												"v1",
+												"read",
+												":groupId"
+											],
+											"query": [
+												{
+													"key": "fields",
+													"value": "cillum anim"
+												}
+											],
+											"variable": [
+												{
+													"key": "groupId",
+													"value": "cillum anim",
+													"description": "(Required) Please append a valid Group Id To the Request URL"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"id\": \"api.group.read\",\n  \"ver\": null,\n  \"ts\": \"2020-12-02 11:09:52:748+0530\",\n  \"params\": {\n    \"resmsgid\": null,\n    \"msgid\": \"6da747d8-c19f-40cb-9938-fcf0913e301f\",\n    \"err\": \"GS_RED07\",\n    \"status\": \"failed\",\n    \"errmsg\": \"Failed to read details, group not found. Contact your system administrator.\"\n  },\n  \"result\": {},\n  \"responseCode\": 400\n}"
+								},
+								{
+									"id": "0a090d17-6de0-4462-9e50-4093ee1a72ec",
+									"name": "Unauthorized User",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Timestamp at which given API request is sent.",
+												"key": "ts",
+												"value": "cillum anim"
+											},
+											{
+												"description": "This ID uniquely identifies a request if the same API is executed multiple times.",
+												"key": "X-msgid",
+												"value": "cillum anim"
+											},
+											{
+												"description": "(Required) Specify authorization key (format: Bearer api-key) received from administrator when performing given API request.",
+												"key": "Authorization",
+												"value": "cillum anim"
+											},
+											{
+												"description": "(Required) Access token of registered user performing given API request.",
+												"key": "x-authenticated-user-token",
+												"value": "cillum anim"
+											},
+											{
+												"description": "Managed User token of registered MUA user performing given API request.",
+												"key": "x-authenticated-for",
+												"value": "cillum anim"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/group/v1/read/:groupId?fields=cillum anim",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"group",
+												"v1",
+												"read",
+												":groupId"
+											],
+											"query": [
+												{
+													"key": "fields",
+													"value": "cillum anim"
+												}
+											],
+											"variable": [
+												{
+													"key": "groupId",
+													"value": "cillum anim",
+													"description": "(Required) Please append a valid Group Id To the Request URL"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"id\": \"api.group.read\",\n  \"ver\": null,\n  \"ts\": \"2020-12-02 05:53:25:361+0000\",\n  \"params\": {\n    \"resmsgid\": null,\n    \"msgid\": \"f5e58ea069e93de16e721d0312a195dc\",\n    \"err\": \"GS_UNAUTHORIZED\"\n  },\n  \"status\": \"failed\",\n  \"errmsg\": \"You are an unauthorized.Contact your system administrator\",\n  \"result\": {},\n  \"responseCode\": 401\n}"
+								},
+								{
+									"id": "0e0a1a8e-d90e-43de-a434-7a1d840fa166",
+									"name": "'INTERNAL SERVER ERROR. We track these errors automatically and try to set it right at the earliest. Try refreshing the page. If the problem persists contact us at info@sunbird.org.'",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Timestamp at which given API request is sent.",
+												"key": "ts",
+												"value": "cillum anim"
+											},
+											{
+												"description": "This ID uniquely identifies a request if the same API is executed multiple times.",
+												"key": "X-msgid",
+												"value": "cillum anim"
+											},
+											{
+												"description": "(Required) Specify authorization key (format: Bearer api-key) received from administrator when performing given API request.",
+												"key": "Authorization",
+												"value": "cillum anim"
+											},
+											{
+												"description": "(Required) Access token of registered user performing given API request.",
+												"key": "x-authenticated-user-token",
+												"value": "cillum anim"
+											},
+											{
+												"description": "Managed User token of registered MUA user performing given API request.",
+												"key": "x-authenticated-for",
+												"value": "cillum anim"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/group/v1/read/:groupId?fields=cillum anim",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"group",
+												"v1",
+												"read",
+												":groupId"
+											],
+											"query": [
+												{
+													"key": "fields",
+													"value": "cillum anim"
+												}
+											],
+											"variable": [
+												{
+													"key": "groupId",
+													"value": "cillum anim",
+													"description": "(Required) Please append a valid Group Id To the Request URL"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"id\": \"api.group.update\",\n  \"ver\": \"v1\",\n  \"ts\": \"2020-12-01 10:49:01:948+0000\",\n  \"params\": {\n    \"resmsgid\": null,\n    \"msgid\": \"12eb0ca45ce4c776fab994d120bedd41\",\n    \"err\": \"GS_RED03\",\n    \"status\": \"failed\",\n    \"errmsg\": \"Failed to read group details due to database error or there are too many concurrent calls to the server. Try again later.\"\n  },\n  \"responseCode\": \"SERVER_ERROR\",\n  \"result\": {}\n}"
+								}
+							]
+						},
+						{
+							"name": "List Groups by User",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "dd7f577e-9360-4d36-8b66-4bb6d7bd3f66",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Status code is 401\", function () {",
+											"    pm.response.to.have.status(401);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "86f7cc7b-b12a-4e1a-9a78-ba9505457941",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "(Required) It is a unique token/key to authenticate the user each time an API is called. For corresponding sessions this token is used, not your actual username/password",
+										"key": "x-authenticated-user-token",
+										"value": "cillum anim"
+									},
+									{
+										"description": "Managed User token of registered MUA user performing given API request. From this LUA and MUA id are seperated and LUA is validated against user_id in x-authenticated-user-token",
+										"key": "x-authenticated-for",
+										"value": "cillum anim"
+									},
+									{
+										"description": "Timestamp is a sequence of characters or encoded information identifying when the list group API call occurred, usually it gives date and time of day, mostly accurate to a small fraction of a second.",
+										"key": "ts",
+										"value": "cillum anim"
+									},
+									{
+										"description": "This ID uniquely identifies a request if the same API is executed multiple times.",
+										"key": "X-msgid",
+										"value": "cillum anim"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"reuqest\": {\n    \"userId\": \"userid\"\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/group/v1/list",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"group",
+										"v1",
+										"list"
+									]
+								},
+								"description": "This API is used for listing groups of a particular user.\n  - The endpoint for **List Group** is `/group/v1/list`\n  - The fields marked with an asterisk (*) are mandatory. They cannot be null or empty."
+							},
+							"response": [
+								{
+									"id": "f4205921-6abf-471f-af2a-cec97bc9589a",
+									"name": "OK ! Successful operation.\"List Group\" operation was successfully executed.",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "(Required) To make use of any Group API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.",
+												"key": "Authorization",
+												"value": "cillum anim"
+											},
+											{
+												"description": "(Required) It is a unique token/key to authenticate the user each time an API is called. For corresponding sessions this token is used, not your actual username/password",
+												"key": "x-authenticated-user-token",
+												"value": "cillum anim"
+											},
+											{
+												"description": "Managed User token of registered MUA user performing given API request. From this LUA and MUA id are seperated and LUA is validated against user_id in x-authenticated-user-token",
+												"key": "x-authenticated-for",
+												"value": "cillum anim"
+											},
+											{
+												"description": "Timestamp is a sequence of characters or encoded information identifying when the list group API call occurred, usually it gives date and time of day, mostly accurate to a small fraction of a second.",
+												"key": "ts",
+												"value": "cillum anim"
+											},
+											{
+												"description": "This ID uniquely identifies a request if the same API is executed multiple times.",
+												"key": "X-msgid",
+												"value": "cillum anim"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"reuqest\": {\n    \"userId\": \"userid\"\n  }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/group/v1/list",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"group",
+												"v1",
+												"list"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"id\": \"api.group.list\",\n  \"ts\": \"2020-12-02 12:57:58:595+0530\",\n  \"ver\": \"v1\",\n  \"params\": null,\n  \"result\": {\n    \"group\": [\n      {\n        \"activities\": [\n          {\n            \"id\": \"do_2130548011728240641164\",\n            \"type\": \"Course\"\n          },\n          {\n            \"id\": \"do_21301074192677273611434\",\n            \"type\": \"Course\"\n          }\n        ],\n        \"createdBy\": \"ab467e6e-1f32-453c-b1d8-c6b5fa6c7b9e\",\n        \"createdOn\": \"2020-07-14 15:04:14:075+0530\",\n        \"id\": \"01460efa-ee58-4c3a-b171-810999128b8c\",\n        \"memberRole\": \"admin\",\n        \"membershipType\": \"invite_only\",\n        \"name\": \"Maths class 2\",\n        \"status\": \"active\",\n        \"updatedBy\": \"ab467e6e-1f32-453c-b1d8-c6b5fa6c7b9e\",\n        \"updatedOn\": \"2020-07-17 18:07:53:603+0530\"\n      },\n      {\n        \"activities\": [\n          {\n            \"id\": \"do_21308363397050368012\",\n            \"type\": \"Course\"\n          }\n        ],\n        \"createdBy\": \"ab467e6e-1f32-453c-b1d8-c6b5fa6c7b9e\",\n        \"createdOn\": \"2020-08-11 10:56:14:680+0530\",\n        \"description\": \"do_21308363397050368012\",\n        \"id\": \"1481a7d2-00fb-43d3-915b-5251a328e08c\",\n        \"memberRole\": \"admin\",\n        \"membershipType\": \"invite_only\",\n        \"name\": \"Vk-3.2NestedCourse\",\n        \"responseCode\": 200,\n        \"status\": \"active\",\n        \"updatedBy\": \"ab467e6e-1f32-453c-b1d8-c6b5fa6c7b9e\",\n        \"updatedOn\": \"2020-08-11 10:57:13:052+0530\"\n      }\n    ]\n  }\n}"
+								},
+								{
+									"id": "65a89b1f-ddec-4b3a-a69e-135ecfb64865",
+									"name": "BAD REQUEST. The \"List Group\" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "(Required) To make use of any Group API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.",
+												"key": "Authorization",
+												"value": "cillum anim"
+											},
+											{
+												"description": "(Required) It is a unique token/key to authenticate the user each time an API is called. For corresponding sessions this token is used, not your actual username/password",
+												"key": "x-authenticated-user-token",
+												"value": "cillum anim"
+											},
+											{
+												"description": "Managed User token of registered MUA user performing given API request. From this LUA and MUA id are seperated and LUA is validated against user_id in x-authenticated-user-token",
+												"key": "x-authenticated-for",
+												"value": "cillum anim"
+											},
+											{
+												"description": "Timestamp is a sequence of characters or encoded information identifying when the list group API call occurred, usually it gives date and time of day, mostly accurate to a small fraction of a second.",
+												"key": "ts",
+												"value": "cillum anim"
+											},
+											{
+												"description": "This ID uniquely identifies a request if the same API is executed multiple times.",
+												"key": "X-msgid",
+												"value": "cillum anim"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"reuqest\": {\n    \"userId\": \"userid\"\n  }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/group/v1/list",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"group",
+												"v1",
+												"list"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"id\": \"api.group.list\",\n  \"ver\": null,\n  \"ts\": \"2020-12-02 11:09:52:748+0530\",\n  \"params\": {\n    \"resmsgid\": null,\n    \"msgid\\\"\": \"6da747d8-c19f-40cb-9938-fcf0913e301f\",\n    \"err\": \"GS_LST02\",\n    \"status\": \"failed\",\n    \"errmsg\": \"Failed to fetch group list, mandatory fields are missing in the request. Enter the required values and resend the request.\"\n  },\n  \"result\": {},\n  \"responseCode\": 400\n}"
+								},
+								{
+									"id": "906d868e-14af-4ba0-b151-11c273160301",
+									"name": "Unauthorized User",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "(Required) To make use of any Group API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.",
+												"key": "Authorization",
+												"value": "cillum anim"
+											},
+											{
+												"description": "(Required) It is a unique token/key to authenticate the user each time an API is called. For corresponding sessions this token is used, not your actual username/password",
+												"key": "x-authenticated-user-token",
+												"value": "cillum anim"
+											},
+											{
+												"description": "Managed User token of registered MUA user performing given API request. From this LUA and MUA id are seperated and LUA is validated against user_id in x-authenticated-user-token",
+												"key": "x-authenticated-for",
+												"value": "cillum anim"
+											},
+											{
+												"description": "Timestamp is a sequence of characters or encoded information identifying when the list group API call occurred, usually it gives date and time of day, mostly accurate to a small fraction of a second.",
+												"key": "ts",
+												"value": "cillum anim"
+											},
+											{
+												"description": "This ID uniquely identifies a request if the same API is executed multiple times.",
+												"key": "X-msgid",
+												"value": "cillum anim"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"reuqest\": {\n    \"userId\": \"userid\"\n  }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/group/v1/list",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"group",
+												"v1",
+												"list"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"id\": \"api.group.list\",\n  \"ver\": null,\n  \"ts\": \"2020-12-02 05:53:25:361+0000\",\n  \"params\": {\n    \"resmsgid\": null,\n    \"msgid\": \"f5e58ea069e93de16e721d0312a195dc\",\n    \"err\": \"GS_UNAUTHORIZED\"\n  },\n  \"status\": \"UNAUTHORIZED\",\n  \"errmsg\": \"You are an unauthorized.Contact your system administrator.\",\n  \"result\": {},\n  \"responseCode\": 401\n}"
+								},
+								{
+									"id": "f00d1a22-6fca-4e1e-b5e9-6cea7ca19861",
+									"name": "'INTERNAL SERVER ERROR. We track these errors automatically and try to set it right at the earliest. Try refreshing the page. If the problem persists contact us at info@sunbird.org.'",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "(Required) To make use of any Group API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.",
+												"key": "Authorization",
+												"value": "cillum anim"
+											},
+											{
+												"description": "(Required) It is a unique token/key to authenticate the user each time an API is called. For corresponding sessions this token is used, not your actual username/password",
+												"key": "x-authenticated-user-token",
+												"value": "cillum anim"
+											},
+											{
+												"description": "Managed User token of registered MUA user performing given API request. From this LUA and MUA id are seperated and LUA is validated against user_id in x-authenticated-user-token",
+												"key": "x-authenticated-for",
+												"value": "cillum anim"
+											},
+											{
+												"description": "Timestamp is a sequence of characters or encoded information identifying when the list group API call occurred, usually it gives date and time of day, mostly accurate to a small fraction of a second.",
+												"key": "ts",
+												"value": "cillum anim"
+											},
+											{
+												"description": "This ID uniquely identifies a request if the same API is executed multiple times.",
+												"key": "X-msgid",
+												"value": "cillum anim"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"reuqest\": {\n    \"userId\": \"userid\"\n  }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/group/v1/list",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"group",
+												"v1",
+												"list"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"id\": \"api.group.list\",\n  \"ver\": \"v1\",\n  \"ts\": \"2020-12-01 10:49:01:948+0000\",\n  \"params\": {\n    \"resmsgid\": null,\n    \"msgid\": \"12eb0ca45ce4c776fab994d120bedd41\",\n    \"err\": \"GS_RED03\",\n    \"status\": \"failed\",\n    \"errmsg\": \"Failed to read group details due to database error or there are too many concurrent calls to the server. Try again later.\"\n  },\n  \"responseCode\": \"SERVER_ERROR\",\n  \"result\": {}\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete Group by User",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "b8d6c2a0-a760-4417-b643-15f31a50f502",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Status code is 401\", function () {",
+											"    pm.response.to.have.status(401);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "f65ae4e3-4a74-42ac-9285-fc75e60ade88",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "key",
+											"value": "Authorization",
+											"type": "string"
+										},
+										{
+											"key": "value",
+											"value": "<API Key>",
+											"type": "string"
+										},
+										{
+											"key": "in",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"description": "(Required) It is a unique token/key to authenticate the user each time an API is called. For corresponding sessions this token is used, not your actual username/password",
+										"key": "x-authenticated-user-token",
+										"value": "cillum anim"
+									},
+									{
+										"description": "Managed User token of registered MUA user performing given API request. From this LUA and MUA id are seperated and LUA is validated against user_id in x-authenticated-user-token",
+										"key": "x-authenticated-for",
+										"value": "cillum anim"
+									},
+									{
+										"description": "Timestamp is a sequence of characters or encoded information identifying when the list group API call occurred, usually it gives date and time of day, mostly accurate to a small fraction of a second.",
+										"key": "ts",
+										"value": "cillum anim"
+									},
+									{
+										"description": "This ID uniquely identifies a request if the same API is executed multiple times.",
+										"key": "X-msgid",
+										"value": "cillum anim"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"request\": {\n    \"groupId\": \"6da747d8-c19f-40cb-9938-fcf0913e301f\"\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/group/v1/delete",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"group",
+										"v1",
+										"delete"
+									]
+								},
+								"description": "This API is used for deleting the groups .\n  - The endpoint for **Delete Group** is `/group/v1/delete`\n  - The fields marked with an asterisk (*) are mandatory. They cannot be null or empty.\n  "
+							},
+							"response": [
+								{
+									"id": "8cbe18c1-3bdb-4348-b7d7-1e2455c4dade",
+									"name": "OK ! Successful operation.\"Delete Group\" operation was successfully executed.",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											},
+											{
+												"description": "(Required) To make use of any Group API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.",
+												"key": "Authorization",
+												"value": "cillum anim"
+											},
+											{
+												"description": "(Required) It is a unique token/key to authenticate the user each time an API is called. For corresponding sessions this token is used, not your actual username/password",
+												"key": "x-authenticated-user-token",
+												"value": "cillum anim"
+											},
+											{
+												"description": "Managed User token of registered MUA user performing given API request. From this LUA and MUA id are seperated and LUA is validated against user_id in x-authenticated-user-token",
+												"key": "x-authenticated-for",
+												"value": "cillum anim"
+											},
+											{
+												"description": "Timestamp is a sequence of characters or encoded information identifying when the list group API call occurred, usually it gives date and time of day, mostly accurate to a small fraction of a second.",
+												"key": "ts",
+												"value": "cillum anim"
+											},
+											{
+												"description": "This ID uniquely identifies a request if the same API is executed multiple times.",
+												"key": "X-msgid",
+												"value": "cillum anim"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"request\": {\n    \"groupId\": \"6da747d8-c19f-40cb-9938-fcf0913e301f\"\n  }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/group/v1/delete",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"group",
+												"v1",
+												"delete"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"id\": \"api.group.delete\",\n  \"ver\": null,\n  \"ts\": \"2020-12-02 11:09:52:748+0530\",\n  \"params\": null,\n  \"result\": {\n    \"response\": \"SUCCESS\"\n  },\n  \"responseCode\": 200\n}"
+								},
+								{
+									"id": "046e6e5f-a151-4c9f-8e10-12a6b6b730ca",
+									"name": "BAD REQUEST. The \"Delete Group\" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											},
+											{
+												"description": "(Required) To make use of any Group API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.",
+												"key": "Authorization",
+												"value": "cillum anim"
+											},
+											{
+												"description": "(Required) It is a unique token/key to authenticate the user each time an API is called. For corresponding sessions this token is used, not your actual username/password",
+												"key": "x-authenticated-user-token",
+												"value": "cillum anim"
+											},
+											{
+												"description": "Managed User token of registered MUA user performing given API request. From this LUA and MUA id are seperated and LUA is validated against user_id in x-authenticated-user-token",
+												"key": "x-authenticated-for",
+												"value": "cillum anim"
+											},
+											{
+												"description": "Timestamp is a sequence of characters or encoded information identifying when the list group API call occurred, usually it gives date and time of day, mostly accurate to a small fraction of a second.",
+												"key": "ts",
+												"value": "cillum anim"
+											},
+											{
+												"description": "This ID uniquely identifies a request if the same API is executed multiple times.",
+												"key": "X-msgid",
+												"value": "cillum anim"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"request\": {\n    \"groupId\": \"6da747d8-c19f-40cb-9938-fcf0913e301f\"\n  }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/group/v1/delete",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"group",
+												"v1",
+												"delete"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"id\": \"api.group.delete\",\n  \"ver\": null,\n  \"ts\": \"2020-12-02 11:09:52:748+0530\",\n  \"params\": {\n    \"resmsgid\": null,\n    \"msgid\\\"\": \"6da747d8-c19f-40cb-9938-fcf0913e301f\",\n    \"err\": \"GS_DLT02\",\n    \"status\": \"failed\",\n    \"errmsg\": \"Failed to delete group, mandatory fields are missing in the request. Enter the required values and resend the request.\"\n  },\n  \"result\": {},\n  \"responseCode\": 400\n}"
+								},
+								{
+									"id": "32c3b0fd-52a9-4c6f-9641-48ab6c4a6a49",
+									"name": "Unauthorized User",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											},
+											{
+												"description": "(Required) To make use of any Group API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.",
+												"key": "Authorization",
+												"value": "cillum anim"
+											},
+											{
+												"description": "(Required) It is a unique token/key to authenticate the user each time an API is called. For corresponding sessions this token is used, not your actual username/password",
+												"key": "x-authenticated-user-token",
+												"value": "cillum anim"
+											},
+											{
+												"description": "Managed User token of registered MUA user performing given API request. From this LUA and MUA id are seperated and LUA is validated against user_id in x-authenticated-user-token",
+												"key": "x-authenticated-for",
+												"value": "cillum anim"
+											},
+											{
+												"description": "Timestamp is a sequence of characters or encoded information identifying when the list group API call occurred, usually it gives date and time of day, mostly accurate to a small fraction of a second.",
+												"key": "ts",
+												"value": "cillum anim"
+											},
+											{
+												"description": "This ID uniquely identifies a request if the same API is executed multiple times.",
+												"key": "X-msgid",
+												"value": "cillum anim"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"request\": {\n    \"groupId\": \"6da747d8-c19f-40cb-9938-fcf0913e301f\"\n  }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/group/v1/delete",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"group",
+												"v1",
+												"delete"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"id\": \"api.group.delete\",\n  \"ver\": null,\n  \"ts\": \"2020-12-02 05:53:25:361+0000\",\n  \"params\": {\n    \"resmsgid\": null,\n    \"msgid\": \"f5e58ea069e93de16e721d0312a195dc\",\n    \"err\": \"GS_UNAUTHORIZED\"\n  },\n  \"status\": \"failed\",\n  \"errmsg\": \"You are an unauthorized.Contact your system administrator.\",\n  \"result\": {},\n  \"responseCode\": 401\n}"
+								},
+								{
+									"id": "b07935f5-0b2b-4f75-978d-01a496e8830f",
+									"name": "'INTERNAL SERVER ERROR. We track these errors automatically and try to set it right at the earliest. Try refreshing the page. If the problem persists contact us at info@sunbird.org.'",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											},
+											{
+												"description": "(Required) To make use of any Group API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.",
+												"key": "Authorization",
+												"value": "cillum anim"
+											},
+											{
+												"description": "(Required) It is a unique token/key to authenticate the user each time an API is called. For corresponding sessions this token is used, not your actual username/password",
+												"key": "x-authenticated-user-token",
+												"value": "cillum anim"
+											},
+											{
+												"description": "Managed User token of registered MUA user performing given API request. From this LUA and MUA id are seperated and LUA is validated against user_id in x-authenticated-user-token",
+												"key": "x-authenticated-for",
+												"value": "cillum anim"
+											},
+											{
+												"description": "Timestamp is a sequence of characters or encoded information identifying when the list group API call occurred, usually it gives date and time of day, mostly accurate to a small fraction of a second.",
+												"key": "ts",
+												"value": "cillum anim"
+											},
+											{
+												"description": "This ID uniquely identifies a request if the same API is executed multiple times.",
+												"key": "X-msgid",
+												"value": "cillum anim"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"request\": {\n    \"groupId\": \"6da747d8-c19f-40cb-9938-fcf0913e301f\"\n  }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/group/v1/delete",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"group",
+												"v1",
+												"delete"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"id\": \"api.group.delete\",\n  \"ver\": \"v1\",\n  \"ts\": \"2020-12-01 10:49:01:948+0000\",\n  \"params\": {\n    \"resmsgid\": null,\n    \"msgid\": \"12eb0ca45ce4c776fab994d120bedd41\",\n    \"err\": \"GS_DLT03\",\n    \"status\": \"failed\",\n    \"errmsg\": \"Failed to delete group, due to database error or there are too many concurrent calls to the server. Try again later.\"\n  },\n  \"responseCode\": \"SERVER_ERROR\",\n  \"result\": {}\n}"
+								}
+							]
+						}
+					],
+					"id": "c350aa50-4f1e-42d5-a888-5e091fe3214a"
+				},
+				{
+					"name": "Group Membership Update by User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "965c4613-76a8-4793-ae71-155beb059598",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "b7817f96-99cd-4d46-aca7-2ccac00ef599",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"description": "(Required) It is a unique token/key to authenticate the user each time an API is called. For corresponding sessions this token is used, not your actual username/password",
+								"key": "x-authenticated-user-token",
+								"value": "cillum anim"
+							},
+							{
+								"description": "Managed User token of registered MUA user performing given API request. From this LUA and MUA id are seperated and LUA is validated against user_id in x-authenticated-user-token",
+								"key": "x-authenticated-for",
+								"value": "cillum anim"
+							},
+							{
+								"description": "Timestamp is a sequence of characters or encoded information identifying when the list group API call occurred, usually it gives date and time of day, mostly accurate to a small fraction of a second.",
+								"key": "ts",
+								"value": "cillum anim"
+							},
+							{
+								"description": "This ID uniquely identifies a request if the same API is executed multiple times.",
+								"key": "X-msgid",
+								"value": "cillum anim"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request\": {\n    \"userId\": \"userid\",\n    \"groups\": [\n      {\n        \"groupId\": \"groupid\",\n        \"visited\": true\n      }\n    ]\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/group/membership/v1/update",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"group",
+								"membership",
+								"v1",
+								"update"
+							]
+						},
+						"description": "This API is used for updating membership, Currently it supports only to update visited flag to verify that user has already visited the group once.\n  - The endpoint for **Membership Update Group** is `/group/membership/v1/update`\n  - The fields marked with an asterisk (*) are mandatory. They cannot be null or empty."
+					},
+					"response": [
+						{
+							"id": "b1734ef6-0393-4d9c-bb14-e82ac7bd4066",
+							"name": "OK ! Successful operation.\"Group Membership Update\" operation was successfully executed.",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "(Required) To make use of any Group API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.",
+										"key": "Authorization",
+										"value": "cillum anim"
+									},
+									{
+										"description": "(Required) It is a unique token/key to authenticate the user each time an API is called. For corresponding sessions this token is used, not your actual username/password",
+										"key": "x-authenticated-user-token",
+										"value": "cillum anim"
+									},
+									{
+										"description": "Managed User token of registered MUA user performing given API request. From this LUA and MUA id are seperated and LUA is validated against user_id in x-authenticated-user-token",
+										"key": "x-authenticated-for",
+										"value": "cillum anim"
+									},
+									{
+										"description": "Timestamp is a sequence of characters or encoded information identifying when the list group API call occurred, usually it gives date and time of day, mostly accurate to a small fraction of a second.",
+										"key": "ts",
+										"value": "cillum anim"
+									},
+									{
+										"description": "This ID uniquely identifies a request if the same API is executed multiple times.",
+										"key": "X-msgid",
+										"value": "cillum anim"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"request\": {\n    \"userId\": \"userid\",\n    \"groups\": [\n      {\n        \"groupId\": \"groupid\",\n        \"visited\": true\n      }\n    ]\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/group/membership/v1/update",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"group",
+										"membership",
+										"v1",
+										"update"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n  \"id\": \"api.group.membership.update\",\n  \"ver\": null,\n  \"ts\": \"2020-12-02 11:09:52:748+0530\",\n  \"params\": null,\n  \"result\": {\n    \"response\": \"SUCCESS\"\n  },\n  \"responseCode\": 200\n}"
+						},
+						{
+							"id": "2e90a435-6632-4eb2-92ae-20824100a4c7",
+							"name": "BAD REQUEST. The \"Group Membership Update\" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "(Required) To make use of any Group API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.",
+										"key": "Authorization",
+										"value": "cillum anim"
+									},
+									{
+										"description": "(Required) It is a unique token/key to authenticate the user each time an API is called. For corresponding sessions this token is used, not your actual username/password",
+										"key": "x-authenticated-user-token",
+										"value": "cillum anim"
+									},
+									{
+										"description": "Managed User token of registered MUA user performing given API request. From this LUA and MUA id are seperated and LUA is validated against user_id in x-authenticated-user-token",
+										"key": "x-authenticated-for",
+										"value": "cillum anim"
+									},
+									{
+										"description": "Timestamp is a sequence of characters or encoded information identifying when the list group API call occurred, usually it gives date and time of day, mostly accurate to a small fraction of a second.",
+										"key": "ts",
+										"value": "cillum anim"
+									},
+									{
+										"description": "This ID uniquely identifies a request if the same API is executed multiple times.",
+										"key": "X-msgid",
+										"value": "cillum anim"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"request\": {\n    \"userId\": \"userid\",\n    \"groups\": [\n      {\n        \"groupId\": \"groupid\",\n        \"visited\": true\n      }\n    ]\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/group/membership/v1/update",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"group",
+										"membership",
+										"v1",
+										"update"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n  \"id\": \"api.group.membership.update\",\n  \"ver\": null,\n  \"ts\": \"2020-12-02 11:09:52:748+0530\",\n  \"params\": {\n    \"resmsgid\": null,\n    \"msgid\\\"\": \"6da747d8-c19f-40cb-9938-fcf0913e301f\",\n    \"err\": \"GS_MBRSHP_UDT02\",\n    \"status\": \"failed\",\n    \"errmsg\": \"Failed to update group member details, mandatory fields are missing in the request. Enter the required values and resend the request.\"\n  },\n  \"result\": {},\n  \"responseCode\": 400\n}"
+						},
+						{
+							"id": "b8d93682-709a-453a-9505-b29964a486ec",
+							"name": "Unauthorized User",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "(Required) To make use of any Group API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.",
+										"key": "Authorization",
+										"value": "cillum anim"
+									},
+									{
+										"description": "(Required) It is a unique token/key to authenticate the user each time an API is called. For corresponding sessions this token is used, not your actual username/password",
+										"key": "x-authenticated-user-token",
+										"value": "cillum anim"
+									},
+									{
+										"description": "Managed User token of registered MUA user performing given API request. From this LUA and MUA id are seperated and LUA is validated against user_id in x-authenticated-user-token",
+										"key": "x-authenticated-for",
+										"value": "cillum anim"
+									},
+									{
+										"description": "Timestamp is a sequence of characters or encoded information identifying when the list group API call occurred, usually it gives date and time of day, mostly accurate to a small fraction of a second.",
+										"key": "ts",
+										"value": "cillum anim"
+									},
+									{
+										"description": "This ID uniquely identifies a request if the same API is executed multiple times.",
+										"key": "X-msgid",
+										"value": "cillum anim"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"request\": {\n    \"userId\": \"userid\",\n    \"groups\": [\n      {\n        \"groupId\": \"groupid\",\n        \"visited\": true\n      }\n    ]\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/group/membership/v1/update",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"group",
+										"membership",
+										"v1",
+										"update"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n  \"id\": \"api.group.membership.update\",\n  \"ver\": null,\n  \"ts\": \"2020-12-02 05:53:25:361+0000\",\n  \"params\": {\n    \"resmsgid\": null,\n    \"msgid\": \"f5e58ea069e93de16e721d0312a195dc\",\n    \"err\": \"GS_UNAUTHORIZED\"\n  },\n  \"status\": \"failed\",\n  \"errmsg\": \"You are an unauthorized.Contact your system administrator.\",\n  \"result\": {},\n  \"responseCode\": 401\n}"
+						},
+						{
+							"id": "14a3cd86-c457-4e34-94ea-b54f53161036",
+							"name": "'INTERNAL SERVER ERROR. We track these errors automatically and try to set it right at the earliest. Try refreshing the page. If the problem persists contact us at info@sunbird.org.'",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "(Required) To make use of any Group API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.",
+										"key": "Authorization",
+										"value": "cillum anim"
+									},
+									{
+										"description": "(Required) It is a unique token/key to authenticate the user each time an API is called. For corresponding sessions this token is used, not your actual username/password",
+										"key": "x-authenticated-user-token",
+										"value": "cillum anim"
+									},
+									{
+										"description": "Managed User token of registered MUA user performing given API request. From this LUA and MUA id are seperated and LUA is validated against user_id in x-authenticated-user-token",
+										"key": "x-authenticated-for",
+										"value": "cillum anim"
+									},
+									{
+										"description": "Timestamp is a sequence of characters or encoded information identifying when the list group API call occurred, usually it gives date and time of day, mostly accurate to a small fraction of a second.",
+										"key": "ts",
+										"value": "cillum anim"
+									},
+									{
+										"description": "This ID uniquely identifies a request if the same API is executed multiple times.",
+										"key": "X-msgid",
+										"value": "cillum anim"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"request\": {\n    \"userId\": \"userid\",\n    \"groups\": [\n      {\n        \"groupId\": \"groupid\",\n        \"visited\": true\n      }\n    ]\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/group/membership/v1/update",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"group",
+										"membership",
+										"v1",
+										"update"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n  \"id\": \"api.group.membership.update\",\n  \"ver\": \"v1\",\n  \"ts\": \"2020-12-01 10:49:01:948+0000\",\n  \"params\": {\n    \"resmsgid\": null,\n    \"msgid\": \"12eb0ca45ce4c776fab994d120bedd41\",\n    \"err\": \"GS_MBRSHP_UDT03\",\n    \"status\": \"failed\",\n    \"errmsg\": \"Failed to create group, due to database error or there are too many concurrent calls to the server. Try again later.\"\n  },\n  \"responseCode\": \"SERVER_ERROR\",\n  \"result\": {}\n}"
+						}
+					]
+				}
+			],
+			"id": "7d4ea112-97aa-4bfd-a6b6-e6120496bd97"
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "36997aab-93b2-4d5d-9954-d65c9618f077",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "ea519885-2ca0-46cf-bd40-063a2bbb70b8",
+				"type": "text/javascript",
+				"exec": [
+					"pm.test(\"Status code is 401\", function () {",
+					"    pm.response.to.have.status(401);",
+					"});"
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "984b3a40-e397-4ae9-850f-3c2be8ed814c",
+			"key": "baseUrl",
+			"value": "https://staging.sunbirded.org/api",
+			"type": "string"
+		}
+	]
+}

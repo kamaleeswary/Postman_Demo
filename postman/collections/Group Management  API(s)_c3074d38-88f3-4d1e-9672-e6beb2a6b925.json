@@ -1,0 +1,2177 @@
+{
+	"info": {
+		"_postman_id": "68856b58-7bc4-4783-aa5f-975f56767aa1",
+		"name": "Group Management  API(s)",
+		"description": "- The Group Management API resources are used to manage individual groups, their members and activities, these resources allow you to create new group, fetch/update group details, add/edit/remove memebers to a group, add/delete activities in a group and fetch all groups of a user. \n<b>Note:</b> These resources can be used as a part of scripts or programs to allow authorized administrators to manage the groups.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "group",
+			"item": [
+				{
+					"name": "v1",
+					"item": [
+						{
+							"name": "Create Group",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "792c8d57-5800-41e2-b34f-bab31404dfb7",
+										"exec": [
+											"pm.test(\"Status code is 401\", function () {",
+											"    pm.response.to.have.status(401);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "b836d7a6-1a68-40ed-b34d-1c4eec8b09af",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "key",
+											"value": "Authorization",
+											"type": "string"
+										},
+										{
+											"key": "value",
+											"value": "<API Key>",
+											"type": "string"
+										},
+										{
+											"key": "in",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"description": "Timestamp at which given API request is sent.",
+										"key": "ts",
+										"value": "veniam Ut ex"
+									},
+									{
+										"description": "This ID uniquely identifies a request if the same API is executed multiple times.",
+										"key": "X-msgid",
+										"value": "veniam Ut ex"
+									},
+									{
+										"description": "It is a unique token/key to authenticate the user each time an API is called. For corresponding sessions this token is used, not your actual username/password",
+										"key": "x-authenticated-user-token",
+										"value": "veniam Ut ex"
+									},
+									{
+										"description": "Managed User token of registered MUA user performing given API request.",
+										"key": "x-authenticated-for",
+										"value": "veniam Ut ex"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"request\": {\n    \"name\": \"Study Group\",\n    \"description\": \"This groups belongs to  group study\"\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/group/v1/create",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"group",
+										"v1",
+										"create"
+									]
+								},
+								"description": "This API is used to create a group\n   - The endpoint for **Create Group** is `/group/v1/create`  \n   - The fields marked with an asterisk (*) are mandatory. They cannot be null or empty."
+							},
+							"response": [
+								{
+									"id": "1c333fb8-c4ba-41f9-885a-c9fa5b0af24d",
+									"name": "OK ! Successful operation.\"Create Group\" operation was successfully executed.",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											},
+											{
+												"description": "Timestamp at which given API request is sent.",
+												"key": "ts",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "This ID uniquely identifies a request if the same API is executed multiple times.",
+												"key": "X-msgid",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "(Required) To make use of any Group API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.",
+												"key": "Authorization",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "It is a unique token/key to authenticate the user each time an API is called. For corresponding sessions this token is used, not your actual username/password",
+												"key": "x-authenticated-user-token",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "Managed User token of registered MUA user performing given API request.",
+												"key": "x-authenticated-for",
+												"value": "veniam Ut ex"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"request\": {\n    \"name\": \"Study Group\",\n    \"description\": \"This groups belongs to  group study\"\n  }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/group/v1/create",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"group",
+												"v1",
+												"create"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"id\": \"api.group.create\",\n  \"ver\": \"v1\",\n  \"ts\": \"2020-12-01 20:52:25:226+0000\",\n  \"params\": null,\n  \"result\": {\n    \"groupId\": \"682473c2-12ba-4a89-b8db-67c2c65ca97a\"\n  },\n  \"responseCode\": 200\n}"
+								},
+								{
+									"id": "b5a618cb-e7ae-4645-bb6c-67d6541c1a84",
+									"name": "BAD REQUEST. The \"Create Group\" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											},
+											{
+												"description": "Timestamp at which given API request is sent.",
+												"key": "ts",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "This ID uniquely identifies a request if the same API is executed multiple times.",
+												"key": "X-msgid",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "(Required) To make use of any Group API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.",
+												"key": "Authorization",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "It is a unique token/key to authenticate the user each time an API is called. For corresponding sessions this token is used, not your actual username/password",
+												"key": "x-authenticated-user-token",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "Managed User token of registered MUA user performing given API request.",
+												"key": "x-authenticated-for",
+												"value": "veniam Ut ex"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"request\": {\n    \"name\": \"Study Group\",\n    \"description\": \"This groups belongs to  group study\"\n  }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/group/v1/create",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"group",
+												"v1",
+												"create"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"id\": \"api.group.create\",\n  \"ver\": null,\n  \"ts\": \"2020-12-02 11:09:52:748+0530\",\n  \"params\": {\n    \"resmsgid\": null,\n    \"msgid\": \"6da747d8-c19f-40cb-9938-fcf0913e301f\",\n    \"err\": \"GS_CRT02\",\n    \"status\": \"failed\",\n    \"errmsg\": \"Failed to create group, fields are missing in the request. Enter the required values and resend the request.\"\n  },\n  \"result\": {},\n  \"responseCode\": 400\n}"
+								},
+								{
+									"id": "2b3f68f9-1bb7-466d-8bc0-ee0f4c81f259",
+									"name": "Unauthorized User",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											},
+											{
+												"description": "Timestamp at which given API request is sent.",
+												"key": "ts",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "This ID uniquely identifies a request if the same API is executed multiple times.",
+												"key": "X-msgid",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "(Required) To make use of any Group API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.",
+												"key": "Authorization",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "It is a unique token/key to authenticate the user each time an API is called. For corresponding sessions this token is used, not your actual username/password",
+												"key": "x-authenticated-user-token",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "Managed User token of registered MUA user performing given API request.",
+												"key": "x-authenticated-for",
+												"value": "veniam Ut ex"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"request\": {\n    \"name\": \"Study Group\",\n    \"description\": \"This groups belongs to  group study\"\n  }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/group/v1/create",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"group",
+												"v1",
+												"create"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"id\": \"api.group.create\",\n  \"ver\": null,\n  \"ts\": \"2020-12-02 05:53:25:361+0000\",\n  \"params\": {\n    \"resmsgid\": null,\n    \"msgid\": \"f5e58ea069e93de16e721d0312a195dc\",\n    \"err\": \"GS_UNAUTHORIZED\",\n    \"status\": \"failed\",\n    \"errmsg\": \"You are an unauthorized.Contact your system administrator\"\n  },\n  \"result\": {},\n  \"responseCode\": 401\n}"
+								},
+								{
+									"id": "2a39adbb-0ad7-4780-a8d3-58363b09eb79",
+									"name": "'INTERNAL SERVER ERROR. We track these errors automatically and try to set it right at the earliest. Try refreshing the page. If the problem persists contact us at info@sunbird.org.'",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											},
+											{
+												"description": "Timestamp at which given API request is sent.",
+												"key": "ts",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "This ID uniquely identifies a request if the same API is executed multiple times.",
+												"key": "X-msgid",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "(Required) To make use of any Group API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.",
+												"key": "Authorization",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "It is a unique token/key to authenticate the user each time an API is called. For corresponding sessions this token is used, not your actual username/password",
+												"key": "x-authenticated-user-token",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "Managed User token of registered MUA user performing given API request.",
+												"key": "x-authenticated-for",
+												"value": "veniam Ut ex"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"request\": {\n    \"name\": \"Study Group\",\n    \"description\": \"This groups belongs to  group study\"\n  }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/group/v1/create",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"group",
+												"v1",
+												"create"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"id\": \"api.group.create\",\n  \"ver\": \"v1\",\n  \"ts\": \"2020-12-01 10:49:01:948+0000\",\n  \"params\": {\n    \"resmsgid\": null,\n    \"msgid\": \"12eb0ca45ce4c776fab994d120bedd41\",\n    \"err\": \"GS_CRT03\",\n    \"status\": \"failed\",\n    \"errmsg\": \"Failed to create group, due to database error or there are too many concurrent calls to the server. Try again later.\"\n  },\n  \"responseCode\": \"SERVER_ERROR\",\n  \"result\": {}\n}"
+								}
+							]
+						},
+						{
+							"name": "Update Group",
+							"id": "ce5de9dd-7461-409b-9543-34fb91ffb21d",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"description": "Timestamp at which given API request is sent.",
+										"key": "ts",
+										"value": "veniam Ut ex"
+									},
+									{
+										"description": "This ID uniquely identifies a request if the same API is executed multiple times.",
+										"key": "X-msgid",
+										"value": "veniam Ut ex"
+									},
+									{
+										"description": "(Required) Access token of registered user performing given API request.",
+										"key": "X-Authenticated-User-Token",
+										"value": "veniam Ut ex"
+									},
+									{
+										"description": "Managed User token of registered MUA user performing given API request.",
+										"key": "x-authenticated-for",
+										"value": "veniam Ut ex"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"request\": {\n    \"groupId\": \"groupid\",\n    \"name\": \"Demo Group\",\n    \"description\": \"Group name is changed for demo purpose\"\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/group/v1/update",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"group",
+										"v1",
+										"update"
+									]
+								},
+								"description": "This API is used for updating the group related details. This can also be used to add/edit/remove members of a group and also to add/remove activitties of a group. This API can add details partially as well, for example, one member in the request could not be added, because that member is inactive or id doesn't exist, still other properties in the request is updated. If a member is not added, only the status of that will be shown in the “errors” array in response.\n  - The endpoint for **Update Group** is `/group/v1/update`\n  - The fields marked with an asterisk (*) are mandatory. They cannot be null or empty.\n  - Once group suspended following operation can only be performed :-\n    1. All member are eligible to leave the group. \n    2. Creator will be able to delete the group.\n    3. Admin will be able to reactivate the group.\n    4. All other operations are not permitted once group is suspended."
+							},
+							"response": [
+								{
+									"id": "711ade60-0d49-4dd8-a5aa-634e1f1ead6c",
+									"name": "OK ! Successful operation.\"Update Group\" operation was successfully executed.",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"description": "Timestamp at which given API request is sent.",
+												"key": "ts",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "This ID uniquely identifies a request if the same API is executed multiple times.",
+												"key": "X-msgid",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "(Required) Specify authorization key (format: Bearer api-key) received from administrator when performing given API request.",
+												"key": "Authorization",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "(Required) Access token of registered user performing given API request.",
+												"key": "X-Authenticated-User-Token",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "Managed User token of registered MUA user performing given API request.",
+												"key": "x-authenticated-for",
+												"value": "veniam Ut ex"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"request\": {\n    \"groupId\": \"groupid\",\n    \"name\": \"Demo Group\",\n    \"description\": \"Group name is changed for demo purpose\"\n  }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/group/v1/update",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"group",
+												"v1",
+												"update"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"id\": \"d1232323\",\n  \"ver\": \"3.0\",\n  \"ets\": \"139832389023\",\n  \"responseCode\": \"200\",\n  \"result\": {\n    \"response\": \"success\"\n  }\n}"
+								},
+								{
+									"id": "822aa6e9-b120-46d1-82d1-1abd4631aff1",
+									"name": "BAD REQUEST. The \"Update Group\" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"description": "Timestamp at which given API request is sent.",
+												"key": "ts",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "This ID uniquely identifies a request if the same API is executed multiple times.",
+												"key": "X-msgid",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "(Required) Specify authorization key (format: Bearer api-key) received from administrator when performing given API request.",
+												"key": "Authorization",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "(Required) Access token of registered user performing given API request.",
+												"key": "X-Authenticated-User-Token",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "Managed User token of registered MUA user performing given API request.",
+												"key": "x-authenticated-for",
+												"value": "veniam Ut ex"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"request\": {\n    \"groupId\": \"groupid\",\n    \"name\": \"Demo Group\",\n    \"description\": \"Group name is changed for demo purpose\"\n  }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/group/v1/update",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"group",
+												"v1",
+												"update"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"id\": \"api.group.update\",\n  \"ver\": null,\n  \"ts\": \"2020-12-02 11:09:52:748+0530\",\n  \"params\": {\n    \"resmsgid\": null,\n    \"msgid\": \"6da747d8-c19f-40cb-9938-fcf0913e301f\",\n    \"err\": \"GS_UDT02\",\n    \"status\": \"failed\",\n    \"errmsg\": \"Failed to update group, mandatory fields are missing in the request. Enter the required values and resend the request.\"\n  },\n  \"result\": {},\n  \"responseCode\": 400\n}"
+								},
+								{
+									"id": "06d8e6f0-ce8d-4ff3-9976-048379f47b1c",
+									"name": "Unauthorized User",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"description": "Timestamp at which given API request is sent.",
+												"key": "ts",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "This ID uniquely identifies a request if the same API is executed multiple times.",
+												"key": "X-msgid",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "(Required) Specify authorization key (format: Bearer api-key) received from administrator when performing given API request.",
+												"key": "Authorization",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "(Required) Access token of registered user performing given API request.",
+												"key": "X-Authenticated-User-Token",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "Managed User token of registered MUA user performing given API request.",
+												"key": "x-authenticated-for",
+												"value": "veniam Ut ex"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"request\": {\n    \"groupId\": \"groupid\",\n    \"name\": \"Demo Group\",\n    \"description\": \"Group name is changed for demo purpose\"\n  }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/group/v1/update",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"group",
+												"v1",
+												"update"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"id\": \"api.group.update\",\n  \"ver\": null,\n  \"ts\": \"2020-12-02 05:53:25:361+0000\",\n  \"params\": {\n    \"resmsgid\": null,\n    \"msgid\": \"f5e58ea069e93de16e721d0312a195dc\",\n    \"err\": \"GS_UNAUTHORIZED\",\n    \"status\": \"failed\",\n    \"errmsg\": \"You are an unauthorized.Contact your system administrator\"\n  },\n  \"result\": {},\n  \"responseCode\": 401\n}"
+								},
+								{
+									"id": "e3389505-967d-4769-bc40-c1e8667116e5",
+									"name": "Resource not found. The \"Update Group\" operation failed ! The possible reason for failure is that requested resource not found. here resource is group.",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"description": "Timestamp at which given API request is sent.",
+												"key": "ts",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "This ID uniquely identifies a request if the same API is executed multiple times.",
+												"key": "X-msgid",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "(Required) Specify authorization key (format: Bearer api-key) received from administrator when performing given API request.",
+												"key": "Authorization",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "(Required) Access token of registered user performing given API request.",
+												"key": "X-Authenticated-User-Token",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "Managed User token of registered MUA user performing given API request.",
+												"key": "x-authenticated-for",
+												"value": "veniam Ut ex"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"request\": {\n    \"groupId\": \"groupid\",\n    \"name\": \"Demo Group\",\n    \"description\": \"Group name is changed for demo purpose\"\n  }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/group/v1/update",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"group",
+												"v1",
+												"update"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"id\": \"api.group.update\",\n  \"ver\": null,\n  \"ts\": \"2020-12-02 11:40:57:348+0530\",\n  \"params\": {\n    \"resmsgid\": null,\n    \"msgid\": \"ed1c0b7c-8f10-4a35-9f42-93966d8d97f6\",\n    \"err\": \"GS_UDT07\",\n    \"status\": \"failed\",\n    \"errmsg\": \"Failed to update, group does not exist. Contact your system administrator.\"\n  },\n  \"result\": {},\n  \"responseCode\": 400\n}"
+								},
+								{
+									"id": "31cc2bb2-9ef4-44a9-b279-55e2987a0a06",
+									"name": "'INTERNAL SERVER ERROR. We track these errors automatically and try to set it right at the earliest. Try refreshing the page. If the problem persists contact us at info@sunbird.org.'",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"description": "Timestamp at which given API request is sent.",
+												"key": "ts",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "This ID uniquely identifies a request if the same API is executed multiple times.",
+												"key": "X-msgid",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "(Required) Specify authorization key (format: Bearer api-key) received from administrator when performing given API request.",
+												"key": "Authorization",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "(Required) Access token of registered user performing given API request.",
+												"key": "X-Authenticated-User-Token",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "Managed User token of registered MUA user performing given API request.",
+												"key": "x-authenticated-for",
+												"value": "veniam Ut ex"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"request\": {\n    \"groupId\": \"groupid\",\n    \"name\": \"Demo Group\",\n    \"description\": \"Group name is changed for demo purpose\"\n  }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/group/v1/update",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"group",
+												"v1",
+												"update"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"id\": \"api.group.update\",\n  \"ver\": \"v1\",\n  \"ts\": \"2020-12-01 10:49:01:948+0000\",\n  \"params\": {\n    \"resmsgid\": null,\n    \"msgid\": \"12eb0ca45ce4c776fab994d120bedd41\",\n    \"err\": \"GS_UDT03\",\n    \"status\": \"failed\",\n    \"errmsg\": \"Failed to update group, due to database error or there are too many concurrent calls to the server. Try again later.\"\n  },\n  \"responseCode\": \"SERVER_ERROR\",\n  \"result\": {}\n}"
+								}
+							]
+						},
+						{
+							"name": "Get Group by Group ID",
+							"id": "46d67c3a-0d18-4674-ba9e-20ddcf282611",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Timestamp at which given API request is sent.",
+										"key": "ts",
+										"value": "veniam Ut ex"
+									},
+									{
+										"description": "This ID uniquely identifies a request if the same API is executed multiple times.",
+										"key": "X-msgid",
+										"value": "veniam Ut ex"
+									},
+									{
+										"description": "(Required) Access token of registered user performing given API request.",
+										"key": "x-authenticated-user-token",
+										"value": "veniam Ut ex"
+									},
+									{
+										"description": "Managed User token of registered MUA user performing given API request.",
+										"key": "x-authenticated-for",
+										"value": "veniam Ut ex"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/group/v1/read/:groupId?fields=veniam Ut ex",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"group",
+										"v1",
+										"read",
+										":groupId"
+									],
+									"query": [
+										{
+											"key": "fields",
+											"value": "veniam Ut ex",
+											"description": "If user need any specific values like, members and activities of the group append 'fields' as QueryParam. Ex: fields=members,activities"
+										}
+									],
+									"variable": [
+										{
+											"id": "b2348be1-7b49-4929-9033-9dc35b115acc",
+											"key": "groupId",
+											"value": "veniam Ut ex",
+											"description": "(Required) Please append a valid Group Id To the Request URL"
+										}
+									]
+								},
+								"description": "This API is used for getting a specific group, it is based on the unique ID of the group\n  - The endpoint for **Get Group by Group ID** is `/group/v1/read/{groupId}`\n  - The fields marked with an asterisk (*) are mandatory. They cannot be null or empty.\n  - User can pass an optional query parameter 'fields'. The value is a comma separated list of fields whose information is required in response. e.g. fields=members,activities\n  - 'members' is to return all the members of the group.\n  - 'activities' is to return all the activities of the group along with activity information from search service."
+							},
+							"response": [
+								{
+									"id": "a9f836e7-a57d-49fa-8cc4-6e38d61efa92",
+									"name": "OK ! Successful operation.\"Get Group by Group ID\" operation was successfully executed.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Timestamp at which given API request is sent.",
+												"key": "ts",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "This ID uniquely identifies a request if the same API is executed multiple times.",
+												"key": "X-msgid",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "(Required) Specify authorization key (format: Bearer api-key) received from administrator when performing given API request.",
+												"key": "Authorization",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "(Required) Access token of registered user performing given API request.",
+												"key": "x-authenticated-user-token",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "Managed User token of registered MUA user performing given API request.",
+												"key": "x-authenticated-for",
+												"value": "veniam Ut ex"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/group/v1/read/:groupId?fields=veniam Ut ex",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"group",
+												"v1",
+												"read",
+												":groupId"
+											],
+											"query": [
+												{
+													"key": "fields",
+													"value": "veniam Ut ex"
+												}
+											],
+											"variable": [
+												{
+													"key": "groupId",
+													"value": "veniam Ut ex",
+													"description": "(Required) Please append a valid Group Id To the Request URL"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"id\": \"api.group.read\",\n  \"ver\": \"v1\",\n  \"ts\": \"2020-12-02 12:15:30:633+0530\",\n  \"params\": null,\n  \"result\": {\n    \"membershipType\": \"moderated\",\n    \"updatedBy\": \"27b9d2ae-3e07-4ebf-909c-985e217417a2\",\n    \"createdBy\": \"27b9d2ae-3e07-4ebf-909c-985e217417a2\",\n    \"activities\": [\n      {\n        \"id\": \"do_212691674291134464114382\",\n        \"type\": \"Course\"\n      }\n    ],\n    \"members\": [\n      {\n        \"userId\": \"39c1cdf3-57c6-4614-b96d-27e29d757085\",\n        \"groupId\": \"298eb021-fe35-4448-a97e-ca1987ea0768\",\n        \"role\": \"admin\",\n        \"status\": \"active\",\n        \"createdOn\": \"2020-10-16 05:29:26:371+0000\",\n        \"createdBy\": \"39c1cdf3-57c6-4614-b96d-27e29d757085\",\n        \"updatedOn\": null,\n        \"updatedBy\": null,\n        \"removedOn\": null,\n        \"removedBy\": null,\n        \"visited\": null,\n        \"name\": \"satish Nirmalkar\"\n      }\n    ],\n    \"name\": \"17july\",\n    \"id\": \"90e70ade-260d-48d6-a8b0-fd5f3e45b4f6\",\n    \"updatedOn\": \"2020-07-22 10:24:42:316+0530\",\n    \"createdOn\": \"2020-07-17 13:43:55:561+0530\",\n    \"status\": \"active\",\n    \"responseCode\": 200\n  }\n}"
+								},
+								{
+									"id": "a28f8676-0c28-4cbf-9746-33a22e804d16",
+									"name": "BAD REQUEST,\"Get Group by Group ID\" operation failed ! The possible reason for failure is that you may have given the wrong id.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Timestamp at which given API request is sent.",
+												"key": "ts",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "This ID uniquely identifies a request if the same API is executed multiple times.",
+												"key": "X-msgid",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "(Required) Specify authorization key (format: Bearer api-key) received from administrator when performing given API request.",
+												"key": "Authorization",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "(Required) Access token of registered user performing given API request.",
+												"key": "x-authenticated-user-token",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "Managed User token of registered MUA user performing given API request.",
+												"key": "x-authenticated-for",
+												"value": "veniam Ut ex"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/group/v1/read/:groupId?fields=veniam Ut ex",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"group",
+												"v1",
+												"read",
+												":groupId"
+											],
+											"query": [
+												{
+													"key": "fields",
+													"value": "veniam Ut ex"
+												}
+											],
+											"variable": [
+												{
+													"key": "groupId",
+													"value": "veniam Ut ex",
+													"description": "(Required) Please append a valid Group Id To the Request URL"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"id\": \"api.group.read\",\n  \"ver\": null,\n  \"ts\": \"2020-12-02 11:09:52:748+0530\",\n  \"params\": {\n    \"resmsgid\": null,\n    \"msgid\": \"6da747d8-c19f-40cb-9938-fcf0913e301f\",\n    \"err\": \"GS_RED07\",\n    \"status\": \"failed\",\n    \"errmsg\": \"Failed to read details, group not found. Contact your system administrator.\"\n  },\n  \"result\": {},\n  \"responseCode\": 400\n}"
+								},
+								{
+									"id": "43135cdd-b49d-47e2-8fe9-d224a2bd61b7",
+									"name": "Unauthorized User",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Timestamp at which given API request is sent.",
+												"key": "ts",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "This ID uniquely identifies a request if the same API is executed multiple times.",
+												"key": "X-msgid",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "(Required) Specify authorization key (format: Bearer api-key) received from administrator when performing given API request.",
+												"key": "Authorization",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "(Required) Access token of registered user performing given API request.",
+												"key": "x-authenticated-user-token",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "Managed User token of registered MUA user performing given API request.",
+												"key": "x-authenticated-for",
+												"value": "veniam Ut ex"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/group/v1/read/:groupId?fields=veniam Ut ex",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"group",
+												"v1",
+												"read",
+												":groupId"
+											],
+											"query": [
+												{
+													"key": "fields",
+													"value": "veniam Ut ex"
+												}
+											],
+											"variable": [
+												{
+													"key": "groupId",
+													"value": "veniam Ut ex",
+													"description": "(Required) Please append a valid Group Id To the Request URL"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"id\": \"api.group.read\",\n  \"ver\": null,\n  \"ts\": \"2020-12-02 05:53:25:361+0000\",\n  \"params\": {\n    \"resmsgid\": null,\n    \"msgid\": \"f5e58ea069e93de16e721d0312a195dc\",\n    \"err\": \"GS_UNAUTHORIZED\"\n  },\n  \"status\": \"failed\",\n  \"errmsg\": \"You are an unauthorized.Contact your system administrator\",\n  \"result\": {},\n  \"responseCode\": 401\n}"
+								},
+								{
+									"id": "9e4c56a8-88a9-4ae1-aecc-1e1d4a51ae40",
+									"name": "'INTERNAL SERVER ERROR. We track these errors automatically and try to set it right at the earliest. Try refreshing the page. If the problem persists contact us at info@sunbird.org.'",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Timestamp at which given API request is sent.",
+												"key": "ts",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "This ID uniquely identifies a request if the same API is executed multiple times.",
+												"key": "X-msgid",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "(Required) Specify authorization key (format: Bearer api-key) received from administrator when performing given API request.",
+												"key": "Authorization",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "(Required) Access token of registered user performing given API request.",
+												"key": "x-authenticated-user-token",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "Managed User token of registered MUA user performing given API request.",
+												"key": "x-authenticated-for",
+												"value": "veniam Ut ex"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/group/v1/read/:groupId?fields=veniam Ut ex",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"group",
+												"v1",
+												"read",
+												":groupId"
+											],
+											"query": [
+												{
+													"key": "fields",
+													"value": "veniam Ut ex"
+												}
+											],
+											"variable": [
+												{
+													"key": "groupId",
+													"value": "veniam Ut ex",
+													"description": "(Required) Please append a valid Group Id To the Request URL"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"id\": \"api.group.update\",\n  \"ver\": \"v1\",\n  \"ts\": \"2020-12-01 10:49:01:948+0000\",\n  \"params\": {\n    \"resmsgid\": null,\n    \"msgid\": \"12eb0ca45ce4c776fab994d120bedd41\",\n    \"err\": \"GS_RED03\",\n    \"status\": \"failed\",\n    \"errmsg\": \"Failed to read group details due to database error or there are too many concurrent calls to the server. Try again later.\"\n  },\n  \"responseCode\": \"SERVER_ERROR\",\n  \"result\": {}\n}"
+								}
+							]
+						},
+						{
+							"name": "List Groups by User",
+							"id": "6c0157fe-b4b9-4aaa-8e45-befd3e6392cd",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "(Required) It is a unique token/key to authenticate the user each time an API is called. For corresponding sessions this token is used, not your actual username/password",
+										"key": "x-authenticated-user-token",
+										"value": "veniam Ut ex"
+									},
+									{
+										"description": "Managed User token of registered MUA user performing given API request. From this LUA and MUA id are seperated and LUA is validated against user_id in x-authenticated-user-token",
+										"key": "x-authenticated-for",
+										"value": "veniam Ut ex"
+									},
+									{
+										"description": "Timestamp is a sequence of characters or encoded information identifying when the list group API call occurred, usually it gives date and time of day, mostly accurate to a small fraction of a second.",
+										"key": "ts",
+										"value": "veniam Ut ex"
+									},
+									{
+										"description": "This ID uniquely identifies a request if the same API is executed multiple times.",
+										"key": "X-msgid",
+										"value": "veniam Ut ex"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"reuqest\": {\n    \"userId\": \"userid\"\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/group/v1/list",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"group",
+										"v1",
+										"list"
+									]
+								},
+								"description": "This API is used for listing groups of a particular user.\n  - The endpoint for **List Group** is `/group/v1/list`\n  - The fields marked with an asterisk (*) are mandatory. They cannot be null or empty."
+							},
+							"response": [
+								{
+									"id": "6c99c05f-4afb-4e1b-94ef-2bd6ffb1ff3d",
+									"name": "OK ! Successful operation.\"List Group\" operation was successfully executed.",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "(Required) To make use of any Group API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.",
+												"key": "Authorization",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "(Required) It is a unique token/key to authenticate the user each time an API is called. For corresponding sessions this token is used, not your actual username/password",
+												"key": "x-authenticated-user-token",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "Managed User token of registered MUA user performing given API request. From this LUA and MUA id are seperated and LUA is validated against user_id in x-authenticated-user-token",
+												"key": "x-authenticated-for",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "Timestamp is a sequence of characters or encoded information identifying when the list group API call occurred, usually it gives date and time of day, mostly accurate to a small fraction of a second.",
+												"key": "ts",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "This ID uniquely identifies a request if the same API is executed multiple times.",
+												"key": "X-msgid",
+												"value": "veniam Ut ex"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"reuqest\": {\n    \"userId\": \"userid\"\n  }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/group/v1/list",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"group",
+												"v1",
+												"list"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"id\": \"api.group.list\",\n  \"ts\": \"2020-12-02 12:57:58:595+0530\",\n  \"ver\": \"v1\",\n  \"params\": null,\n  \"result\": {\n    \"group\": [\n      {\n        \"activities\": [\n          {\n            \"id\": \"do_2130548011728240641164\",\n            \"type\": \"Course\"\n          },\n          {\n            \"id\": \"do_21301074192677273611434\",\n            \"type\": \"Course\"\n          }\n        ],\n        \"createdBy\": \"ab467e6e-1f32-453c-b1d8-c6b5fa6c7b9e\",\n        \"createdOn\": \"2020-07-14 15:04:14:075+0530\",\n        \"id\": \"01460efa-ee58-4c3a-b171-810999128b8c\",\n        \"memberRole\": \"admin\",\n        \"membershipType\": \"invite_only\",\n        \"name\": \"Maths class 2\",\n        \"status\": \"active\",\n        \"updatedBy\": \"ab467e6e-1f32-453c-b1d8-c6b5fa6c7b9e\",\n        \"updatedOn\": \"2020-07-17 18:07:53:603+0530\"\n      },\n      {\n        \"activities\": [\n          {\n            \"id\": \"do_21308363397050368012\",\n            \"type\": \"Course\"\n          }\n        ],\n        \"createdBy\": \"ab467e6e-1f32-453c-b1d8-c6b5fa6c7b9e\",\n        \"createdOn\": \"2020-08-11 10:56:14:680+0530\",\n        \"description\": \"do_21308363397050368012\",\n        \"id\": \"1481a7d2-00fb-43d3-915b-5251a328e08c\",\n        \"memberRole\": \"admin\",\n        \"membershipType\": \"invite_only\",\n        \"name\": \"Vk-3.2NestedCourse\",\n        \"responseCode\": 200,\n        \"status\": \"active\",\n        \"updatedBy\": \"ab467e6e-1f32-453c-b1d8-c6b5fa6c7b9e\",\n        \"updatedOn\": \"2020-08-11 10:57:13:052+0530\"\n      }\n    ]\n  }\n}"
+								},
+								{
+									"id": "caa68787-e345-4ece-ada1-5bd1c3f02d0d",
+									"name": "BAD REQUEST. The \"List Group\" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "(Required) To make use of any Group API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.",
+												"key": "Authorization",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "(Required) It is a unique token/key to authenticate the user each time an API is called. For corresponding sessions this token is used, not your actual username/password",
+												"key": "x-authenticated-user-token",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "Managed User token of registered MUA user performing given API request. From this LUA and MUA id are seperated and LUA is validated against user_id in x-authenticated-user-token",
+												"key": "x-authenticated-for",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "Timestamp is a sequence of characters or encoded information identifying when the list group API call occurred, usually it gives date and time of day, mostly accurate to a small fraction of a second.",
+												"key": "ts",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "This ID uniquely identifies a request if the same API is executed multiple times.",
+												"key": "X-msgid",
+												"value": "veniam Ut ex"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"reuqest\": {\n    \"userId\": \"userid\"\n  }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/group/v1/list",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"group",
+												"v1",
+												"list"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"id\": \"api.group.list\",\n  \"ver\": null,\n  \"ts\": \"2020-12-02 11:09:52:748+0530\",\n  \"params\": {\n    \"resmsgid\": null,\n    \"msgid\\\"\": \"6da747d8-c19f-40cb-9938-fcf0913e301f\",\n    \"err\": \"GS_LST02\",\n    \"status\": \"failed\",\n    \"errmsg\": \"Failed to fetch group list, mandatory fields are missing in the request. Enter the required values and resend the request.\"\n  },\n  \"result\": {},\n  \"responseCode\": 400\n}"
+								},
+								{
+									"id": "f8136116-4070-4f7b-be46-a94782e105a6",
+									"name": "Unauthorized User",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "(Required) To make use of any Group API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.",
+												"key": "Authorization",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "(Required) It is a unique token/key to authenticate the user each time an API is called. For corresponding sessions this token is used, not your actual username/password",
+												"key": "x-authenticated-user-token",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "Managed User token of registered MUA user performing given API request. From this LUA and MUA id are seperated and LUA is validated against user_id in x-authenticated-user-token",
+												"key": "x-authenticated-for",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "Timestamp is a sequence of characters or encoded information identifying when the list group API call occurred, usually it gives date and time of day, mostly accurate to a small fraction of a second.",
+												"key": "ts",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "This ID uniquely identifies a request if the same API is executed multiple times.",
+												"key": "X-msgid",
+												"value": "veniam Ut ex"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"reuqest\": {\n    \"userId\": \"userid\"\n  }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/group/v1/list",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"group",
+												"v1",
+												"list"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"id\": \"api.group.list\",\n  \"ver\": null,\n  \"ts\": \"2020-12-02 05:53:25:361+0000\",\n  \"params\": {\n    \"resmsgid\": null,\n    \"msgid\": \"f5e58ea069e93de16e721d0312a195dc\",\n    \"err\": \"GS_UNAUTHORIZED\"\n  },\n  \"status\": \"UNAUTHORIZED\",\n  \"errmsg\": \"You are an unauthorized.Contact your system administrator.\",\n  \"result\": {},\n  \"responseCode\": 401\n}"
+								},
+								{
+									"id": "a5470f5c-e656-4d0e-b3a7-cfb86cbe918f",
+									"name": "'INTERNAL SERVER ERROR. We track these errors automatically and try to set it right at the earliest. Try refreshing the page. If the problem persists contact us at info@sunbird.org.'",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "(Required) To make use of any Group API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.",
+												"key": "Authorization",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "(Required) It is a unique token/key to authenticate the user each time an API is called. For corresponding sessions this token is used, not your actual username/password",
+												"key": "x-authenticated-user-token",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "Managed User token of registered MUA user performing given API request. From this LUA and MUA id are seperated and LUA is validated against user_id in x-authenticated-user-token",
+												"key": "x-authenticated-for",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "Timestamp is a sequence of characters or encoded information identifying when the list group API call occurred, usually it gives date and time of day, mostly accurate to a small fraction of a second.",
+												"key": "ts",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "This ID uniquely identifies a request if the same API is executed multiple times.",
+												"key": "X-msgid",
+												"value": "veniam Ut ex"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"reuqest\": {\n    \"userId\": \"userid\"\n  }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/group/v1/list",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"group",
+												"v1",
+												"list"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"id\": \"api.group.list\",\n  \"ver\": \"v1\",\n  \"ts\": \"2020-12-01 10:49:01:948+0000\",\n  \"params\": {\n    \"resmsgid\": null,\n    \"msgid\": \"12eb0ca45ce4c776fab994d120bedd41\",\n    \"err\": \"GS_RED03\",\n    \"status\": \"failed\",\n    \"errmsg\": \"Failed to read group details due to database error or there are too many concurrent calls to the server. Try again later.\"\n  },\n  \"responseCode\": \"SERVER_ERROR\",\n  \"result\": {}\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete Group by User",
+							"id": "b246ae4e-ce72-41df-934a-17e6ed51806f",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "key",
+											"value": "Authorization",
+											"type": "string"
+										},
+										{
+											"key": "value",
+											"value": "<API Key>",
+											"type": "string"
+										},
+										{
+											"key": "in",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"description": "(Required) It is a unique token/key to authenticate the user each time an API is called. For corresponding sessions this token is used, not your actual username/password",
+										"key": "x-authenticated-user-token",
+										"value": "veniam Ut ex"
+									},
+									{
+										"description": "Managed User token of registered MUA user performing given API request. From this LUA and MUA id are seperated and LUA is validated against user_id in x-authenticated-user-token",
+										"key": "x-authenticated-for",
+										"value": "veniam Ut ex"
+									},
+									{
+										"description": "Timestamp is a sequence of characters or encoded information identifying when the list group API call occurred, usually it gives date and time of day, mostly accurate to a small fraction of a second.",
+										"key": "ts",
+										"value": "veniam Ut ex"
+									},
+									{
+										"description": "This ID uniquely identifies a request if the same API is executed multiple times.",
+										"key": "X-msgid",
+										"value": "veniam Ut ex"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"request\": {\n    \"groupId\": \"6da747d8-c19f-40cb-9938-fcf0913e301f\"\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/group/v1/delete",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"group",
+										"v1",
+										"delete"
+									]
+								},
+								"description": "This API is used for deleting the groups .\n  - The endpoint for **Delete Group** is `/group/v1/delete`\n  - The fields marked with an asterisk (*) are mandatory. They cannot be null or empty.\n  "
+							},
+							"response": [
+								{
+									"id": "1baf7e3c-7509-48da-8b56-8f1208316fdd",
+									"name": "OK ! Successful operation.\"Delete Group\" operation was successfully executed.",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											},
+											{
+												"description": "(Required) To make use of any Group API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.",
+												"key": "Authorization",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "(Required) It is a unique token/key to authenticate the user each time an API is called. For corresponding sessions this token is used, not your actual username/password",
+												"key": "x-authenticated-user-token",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "Managed User token of registered MUA user performing given API request. From this LUA and MUA id are seperated and LUA is validated against user_id in x-authenticated-user-token",
+												"key": "x-authenticated-for",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "Timestamp is a sequence of characters or encoded information identifying when the list group API call occurred, usually it gives date and time of day, mostly accurate to a small fraction of a second.",
+												"key": "ts",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "This ID uniquely identifies a request if the same API is executed multiple times.",
+												"key": "X-msgid",
+												"value": "veniam Ut ex"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"request\": {\n    \"groupId\": \"6da747d8-c19f-40cb-9938-fcf0913e301f\"\n  }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/group/v1/delete",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"group",
+												"v1",
+												"delete"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"id\": \"api.group.delete\",\n  \"ver\": null,\n  \"ts\": \"2020-12-02 11:09:52:748+0530\",\n  \"params\": null,\n  \"result\": {\n    \"response\": \"SUCCESS\"\n  },\n  \"responseCode\": 200\n}"
+								},
+								{
+									"id": "f78b7c97-769c-42f9-a42d-11918ad3566e",
+									"name": "BAD REQUEST. The \"Delete Group\" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											},
+											{
+												"description": "(Required) To make use of any Group API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.",
+												"key": "Authorization",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "(Required) It is a unique token/key to authenticate the user each time an API is called. For corresponding sessions this token is used, not your actual username/password",
+												"key": "x-authenticated-user-token",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "Managed User token of registered MUA user performing given API request. From this LUA and MUA id are seperated and LUA is validated against user_id in x-authenticated-user-token",
+												"key": "x-authenticated-for",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "Timestamp is a sequence of characters or encoded information identifying when the list group API call occurred, usually it gives date and time of day, mostly accurate to a small fraction of a second.",
+												"key": "ts",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "This ID uniquely identifies a request if the same API is executed multiple times.",
+												"key": "X-msgid",
+												"value": "veniam Ut ex"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"request\": {\n    \"groupId\": \"6da747d8-c19f-40cb-9938-fcf0913e301f\"\n  }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/group/v1/delete",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"group",
+												"v1",
+												"delete"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"id\": \"api.group.delete\",\n  \"ver\": null,\n  \"ts\": \"2020-12-02 11:09:52:748+0530\",\n  \"params\": {\n    \"resmsgid\": null,\n    \"msgid\\\"\": \"6da747d8-c19f-40cb-9938-fcf0913e301f\",\n    \"err\": \"GS_DLT02\",\n    \"status\": \"failed\",\n    \"errmsg\": \"Failed to delete group, mandatory fields are missing in the request. Enter the required values and resend the request.\"\n  },\n  \"result\": {},\n  \"responseCode\": 400\n}"
+								},
+								{
+									"id": "4c046dd5-087b-407d-9e53-b9c667115a2d",
+									"name": "Unauthorized User",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											},
+											{
+												"description": "(Required) To make use of any Group API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.",
+												"key": "Authorization",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "(Required) It is a unique token/key to authenticate the user each time an API is called. For corresponding sessions this token is used, not your actual username/password",
+												"key": "x-authenticated-user-token",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "Managed User token of registered MUA user performing given API request. From this LUA and MUA id are seperated and LUA is validated against user_id in x-authenticated-user-token",
+												"key": "x-authenticated-for",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "Timestamp is a sequence of characters or encoded information identifying when the list group API call occurred, usually it gives date and time of day, mostly accurate to a small fraction of a second.",
+												"key": "ts",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "This ID uniquely identifies a request if the same API is executed multiple times.",
+												"key": "X-msgid",
+												"value": "veniam Ut ex"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"request\": {\n    \"groupId\": \"6da747d8-c19f-40cb-9938-fcf0913e301f\"\n  }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/group/v1/delete",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"group",
+												"v1",
+												"delete"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"id\": \"api.group.delete\",\n  \"ver\": null,\n  \"ts\": \"2020-12-02 05:53:25:361+0000\",\n  \"params\": {\n    \"resmsgid\": null,\n    \"msgid\": \"f5e58ea069e93de16e721d0312a195dc\",\n    \"err\": \"GS_UNAUTHORIZED\"\n  },\n  \"status\": \"failed\",\n  \"errmsg\": \"You are an unauthorized.Contact your system administrator.\",\n  \"result\": {},\n  \"responseCode\": 401\n}"
+								},
+								{
+									"id": "9f02d046-23ec-45d3-a0f2-e5cef39b0d7b",
+									"name": "'INTERNAL SERVER ERROR. We track these errors automatically and try to set it right at the earliest. Try refreshing the page. If the problem persists contact us at info@sunbird.org.'",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											},
+											{
+												"description": "(Required) To make use of any Group API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.",
+												"key": "Authorization",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "(Required) It is a unique token/key to authenticate the user each time an API is called. For corresponding sessions this token is used, not your actual username/password",
+												"key": "x-authenticated-user-token",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "Managed User token of registered MUA user performing given API request. From this LUA and MUA id are seperated and LUA is validated against user_id in x-authenticated-user-token",
+												"key": "x-authenticated-for",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "Timestamp is a sequence of characters or encoded information identifying when the list group API call occurred, usually it gives date and time of day, mostly accurate to a small fraction of a second.",
+												"key": "ts",
+												"value": "veniam Ut ex"
+											},
+											{
+												"description": "This ID uniquely identifies a request if the same API is executed multiple times.",
+												"key": "X-msgid",
+												"value": "veniam Ut ex"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"request\": {\n    \"groupId\": \"6da747d8-c19f-40cb-9938-fcf0913e301f\"\n  }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/group/v1/delete",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"group",
+												"v1",
+												"delete"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"id\": \"api.group.delete\",\n  \"ver\": \"v1\",\n  \"ts\": \"2020-12-01 10:49:01:948+0000\",\n  \"params\": {\n    \"resmsgid\": null,\n    \"msgid\": \"12eb0ca45ce4c776fab994d120bedd41\",\n    \"err\": \"GS_DLT03\",\n    \"status\": \"failed\",\n    \"errmsg\": \"Failed to delete group, due to database error or there are too many concurrent calls to the server. Try again later.\"\n  },\n  \"responseCode\": \"SERVER_ERROR\",\n  \"result\": {}\n}"
+								}
+							]
+						}
+					],
+					"id": "cf61dae9-f04f-440e-8355-b44293885064"
+				},
+				{
+					"name": "Group Membership Update by User",
+					"id": "4398233b-d8df-4243-937f-181b7599760e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"description": "(Required) It is a unique token/key to authenticate the user each time an API is called. For corresponding sessions this token is used, not your actual username/password",
+								"key": "x-authenticated-user-token",
+								"value": "veniam Ut ex"
+							},
+							{
+								"description": "Managed User token of registered MUA user performing given API request. From this LUA and MUA id are seperated and LUA is validated against user_id in x-authenticated-user-token",
+								"key": "x-authenticated-for",
+								"value": "veniam Ut ex"
+							},
+							{
+								"description": "Timestamp is a sequence of characters or encoded information identifying when the list group API call occurred, usually it gives date and time of day, mostly accurate to a small fraction of a second.",
+								"key": "ts",
+								"value": "veniam Ut ex"
+							},
+							{
+								"description": "This ID uniquely identifies a request if the same API is executed multiple times.",
+								"key": "X-msgid",
+								"value": "veniam Ut ex"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request\": {\n    \"userId\": \"userid\",\n    \"groups\": [\n      {\n        \"groupId\": \"groupid\",\n        \"visited\": true\n      }\n    ]\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/group/membership/v1/update",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"group",
+								"membership",
+								"v1",
+								"update"
+							]
+						},
+						"description": "This API is used for updating membership, Currently it supports only to update visited flag to verify that user has already visited the group once.\n  - The endpoint for **Membership Update Group** is `/group/membership/v1/update`\n  - The fields marked with an asterisk (*) are mandatory. They cannot be null or empty."
+					},
+					"response": [
+						{
+							"id": "42adc1dd-d89f-4c1c-a8c9-d9e98a067d67",
+							"name": "OK ! Successful operation.\"Group Membership Update\" operation was successfully executed.",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "(Required) To make use of any Group API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.",
+										"key": "Authorization",
+										"value": "veniam Ut ex"
+									},
+									{
+										"description": "(Required) It is a unique token/key to authenticate the user each time an API is called. For corresponding sessions this token is used, not your actual username/password",
+										"key": "x-authenticated-user-token",
+										"value": "veniam Ut ex"
+									},
+									{
+										"description": "Managed User token of registered MUA user performing given API request. From this LUA and MUA id are seperated and LUA is validated against user_id in x-authenticated-user-token",
+										"key": "x-authenticated-for",
+										"value": "veniam Ut ex"
+									},
+									{
+										"description": "Timestamp is a sequence of characters or encoded information identifying when the list group API call occurred, usually it gives date and time of day, mostly accurate to a small fraction of a second.",
+										"key": "ts",
+										"value": "veniam Ut ex"
+									},
+									{
+										"description": "This ID uniquely identifies a request if the same API is executed multiple times.",
+										"key": "X-msgid",
+										"value": "veniam Ut ex"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"request\": {\n    \"userId\": \"userid\",\n    \"groups\": [\n      {\n        \"groupId\": \"groupid\",\n        \"visited\": true\n      }\n    ]\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/group/membership/v1/update",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"group",
+										"membership",
+										"v1",
+										"update"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n  \"id\": \"api.group.membership.update\",\n  \"ver\": null,\n  \"ts\": \"2020-12-02 11:09:52:748+0530\",\n  \"params\": null,\n  \"result\": {\n    \"response\": \"SUCCESS\"\n  },\n  \"responseCode\": 200\n}"
+						},
+						{
+							"id": "d6a3c50e-0e50-4fc3-9852-26cfc9947bee",
+							"name": "BAD REQUEST. The \"Group Membership Update\" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "(Required) To make use of any Group API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.",
+										"key": "Authorization",
+										"value": "veniam Ut ex"
+									},
+									{
+										"description": "(Required) It is a unique token/key to authenticate the user each time an API is called. For corresponding sessions this token is used, not your actual username/password",
+										"key": "x-authenticated-user-token",
+										"value": "veniam Ut ex"
+									},
+									{
+										"description": "Managed User token of registered MUA user performing given API request. From this LUA and MUA id are seperated and LUA is validated against user_id in x-authenticated-user-token",
+										"key": "x-authenticated-for",
+										"value": "veniam Ut ex"
+									},
+									{
+										"description": "Timestamp is a sequence of characters or encoded information identifying when the list group API call occurred, usually it gives date and time of day, mostly accurate to a small fraction of a second.",
+										"key": "ts",
+										"value": "veniam Ut ex"
+									},
+									{
+										"description": "This ID uniquely identifies a request if the same API is executed multiple times.",
+										"key": "X-msgid",
+										"value": "veniam Ut ex"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"request\": {\n    \"userId\": \"userid\",\n    \"groups\": [\n      {\n        \"groupId\": \"groupid\",\n        \"visited\": true\n      }\n    ]\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/group/membership/v1/update",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"group",
+										"membership",
+										"v1",
+										"update"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n  \"id\": \"api.group.membership.update\",\n  \"ver\": null,\n  \"ts\": \"2020-12-02 11:09:52:748+0530\",\n  \"params\": {\n    \"resmsgid\": null,\n    \"msgid\\\"\": \"6da747d8-c19f-40cb-9938-fcf0913e301f\",\n    \"err\": \"GS_MBRSHP_UDT02\",\n    \"status\": \"failed\",\n    \"errmsg\": \"Failed to update group member details, mandatory fields are missing in the request. Enter the required values and resend the request.\"\n  },\n  \"result\": {},\n  \"responseCode\": 400\n}"
+						},
+						{
+							"id": "59f94e2f-5e8c-49f4-a2bd-ce00cf67ad2d",
+							"name": "Unauthorized User",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "(Required) To make use of any Group API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.",
+										"key": "Authorization",
+										"value": "veniam Ut ex"
+									},
+									{
+										"description": "(Required) It is a unique token/key to authenticate the user each time an API is called. For corresponding sessions this token is used, not your actual username/password",
+										"key": "x-authenticated-user-token",
+										"value": "veniam Ut ex"
+									},
+									{
+										"description": "Managed User token of registered MUA user performing given API request. From this LUA and MUA id are seperated and LUA is validated against user_id in x-authenticated-user-token",
+										"key": "x-authenticated-for",
+										"value": "veniam Ut ex"
+									},
+									{
+										"description": "Timestamp is a sequence of characters or encoded information identifying when the list group API call occurred, usually it gives date and time of day, mostly accurate to a small fraction of a second.",
+										"key": "ts",
+										"value": "veniam Ut ex"
+									},
+									{
+										"description": "This ID uniquely identifies a request if the same API is executed multiple times.",
+										"key": "X-msgid",
+										"value": "veniam Ut ex"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"request\": {\n    \"userId\": \"userid\",\n    \"groups\": [\n      {\n        \"groupId\": \"groupid\",\n        \"visited\": true\n      }\n    ]\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/group/membership/v1/update",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"group",
+										"membership",
+										"v1",
+										"update"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n  \"id\": \"api.group.membership.update\",\n  \"ver\": null,\n  \"ts\": \"2020-12-02 05:53:25:361+0000\",\n  \"params\": {\n    \"resmsgid\": null,\n    \"msgid\": \"f5e58ea069e93de16e721d0312a195dc\",\n    \"err\": \"GS_UNAUTHORIZED\"\n  },\n  \"status\": \"failed\",\n  \"errmsg\": \"You are an unauthorized.Contact your system administrator.\",\n  \"result\": {},\n  \"responseCode\": 401\n}"
+						},
+						{
+							"id": "1c7c443f-23e5-4cc1-aa09-0c34ded46f7c",
+							"name": "'INTERNAL SERVER ERROR. We track these errors automatically and try to set it right at the earliest. Try refreshing the page. If the problem persists contact us at info@sunbird.org.'",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "(Required) To make use of any Group API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.",
+										"key": "Authorization",
+										"value": "veniam Ut ex"
+									},
+									{
+										"description": "(Required) It is a unique token/key to authenticate the user each time an API is called. For corresponding sessions this token is used, not your actual username/password",
+										"key": "x-authenticated-user-token",
+										"value": "veniam Ut ex"
+									},
+									{
+										"description": "Managed User token of registered MUA user performing given API request. From this LUA and MUA id are seperated and LUA is validated against user_id in x-authenticated-user-token",
+										"key": "x-authenticated-for",
+										"value": "veniam Ut ex"
+									},
+									{
+										"description": "Timestamp is a sequence of characters or encoded information identifying when the list group API call occurred, usually it gives date and time of day, mostly accurate to a small fraction of a second.",
+										"key": "ts",
+										"value": "veniam Ut ex"
+									},
+									{
+										"description": "This ID uniquely identifies a request if the same API is executed multiple times.",
+										"key": "X-msgid",
+										"value": "veniam Ut ex"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"request\": {\n    \"userId\": \"userid\",\n    \"groups\": [\n      {\n        \"groupId\": \"groupid\",\n        \"visited\": true\n      }\n    ]\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/group/membership/v1/update",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"group",
+										"membership",
+										"v1",
+										"update"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n  \"id\": \"api.group.membership.update\",\n  \"ver\": \"v1\",\n  \"ts\": \"2020-12-01 10:49:01:948+0000\",\n  \"params\": {\n    \"resmsgid\": null,\n    \"msgid\": \"12eb0ca45ce4c776fab994d120bedd41\",\n    \"err\": \"GS_MBRSHP_UDT03\",\n    \"status\": \"failed\",\n    \"errmsg\": \"Failed to create group, due to database error or there are too many concurrent calls to the server. Try again later.\"\n  },\n  \"responseCode\": \"SERVER_ERROR\",\n  \"result\": {}\n}"
+						}
+					]
+				}
+			],
+			"id": "5b6fbf69-a76d-4289-b435-bb7dfea1df0a"
+		}
+	],
+	"variable": [
+		{
+			"id": "ef8579ab-2a97-4572-942e-e75235652af7",
+			"key": "baseUrl",
+			"value": "https://staging.sunbirded.org/api",
+			"type": "string"
+		}
+	]
+}
